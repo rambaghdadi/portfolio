@@ -1,11 +1,10 @@
 import Footer from "../components/General/Footer/Footer"
 import MainHero from "../components/General/MainHero/MainHero"
-import classes from "../styles/about-me.module.css"
 
 export default function AboutMe(props) {
 	return (
 		<>
-			<div className={classes.main}>
+			<div className="about-page">
 				<MainHero text={"What."} chubbs={"5"} />
 				<Footer />
 			</div>

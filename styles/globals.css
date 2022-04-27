@@ -29,3 +29,28 @@ a {
 p {
 	font-size: 1.2rem;
 }
+
+.homePage {
+	background: linear-gradient(
+		rgb(0, 115, 255),
+		rgb(128, 0, 255),
+		rgb(128, 0, 255)
+	);
+	width: 100vw;
+	padding-top: 5rem;
+	position: relative;
+}
+
+.about-page {
+	background: linear-gradient(rgb(191, 0, 255), rgb(255, 0, 149));
+	width: 100vw;
+	padding-top: 5rem;
+	position: relative;
+}
+
+.portfolio-page {
+	background: linear-gradient(rgb(255, 0, 119), rgb(255, 0, 179));
+	width: 100vw;
+	padding-top: 5rem;
+	position: relative;
+}
