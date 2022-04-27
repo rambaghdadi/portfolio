@@ -8,18 +8,21 @@
 }
 
 .main::before {
+	background: linear-gradient(
+		to bottom,
+		rgb(128, 0, 255) 50%,
+		rgb(255, 0, 204) 0%
+	);
 	content: "";
 	position: absolute;
-	top: 40%;
-	left: 50%;
+	top: 0;
+	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgb(255, 0, 204);
 	width: 100%;
 	height: 100%;
-	transform: translate(0%, 50%) rotate(50deg) scale(2);
+	transform: rotate(-35deg) scale(4);
 	z-index: 1;
-
 	opacity: 1;
 }
 
@@ -32,26 +35,109 @@
 }
 
 .container h1 {
-	font-size: 2.3rem;
+	font-size: 3rem;
 	max-width: min-content;
 	text-transform: uppercase;
 	line-height: 1.2;
 	letter-spacing: 0px;
 	z-index: 2;
+	color: #fffade;
 }
 
 .imageContainer {
 	z-index: 2;
 }
 
-.link {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 0.5rem;
-	z-index: 2;
+.image {
+	width: 300px;
+	height: 300px;
+	margin-top: -3rem;
+	margin-bottom: -5rem;
 }
 
-.link p {
+.button {
+	display: flex;
+	border-radius: 5px;
+	color: white;
+	font-size: 1rem;
+	align-items: center;
+	align-content: center;
+	gap: 0.5rem;
+	justify-content: space-between;
+	z-index: 2;
+	padding: 0.5rem 1.5rem;
+	outline: none;
+	background-color: transparent;
+	border: 1px solid rgb(156, 0, 229);
+	font-family: "Poppins";
+}
+
+.button:hover {
+	background-color: rgba(156, 0, 229, 0.855);
+}
+
+.button:active {
+	transform: translate(0, 5%);
+}
+
+/* .button p {
 	font-size: 1.2rem;
+} */
+
+@media (min-width: 530px) {
+	.main {
+		padding: 10rem 2rem;
+	}
+
+	.container h1 {
+		font-size: 4rem;
+		line-height: 1.1;
+	}
+
+	.image {
+		width: 400px;
+		height: 400px;
+	}
+
+	.button {
+		/* width: 16rem; */
+		/* height: 3.5rem; */
+		/* font-size: 1.3rem; */
+	}
+}
+
+@media (min-width: 950px) {
+	.main {
+		padding: 10rem 2rem;
+	}
+
+	.container {
+		gap: 3.5rem;
+	}
+
+	.container h1 {
+		font-size: 5.5rem;
+		line-height: 1.1;
+	}
+
+	.main::before {
+		transform: rotate(-30deg) scale(10);
+	}
+
+	.image {
+		width: 500px;
+		height: 500px;
+		transform: scale(1.4);
+	}
+
+	.button {
+		padding: 1.5rem 5rem;
+		font-size: 1.3rem;
+	}
+}
+
+@media (min-width: 1850px) {
+	.main::before {
+		transform: rotate(-20deg) scale(10);
+	}
 }

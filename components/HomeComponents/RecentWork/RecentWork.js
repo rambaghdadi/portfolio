@@ -28,36 +28,22 @@ export default function RecentWork(props) {
 						initial="hidden"
 						whileInView={"visible"}
 						viewport={{ once: true }}
+						style={{ zIndex: 100 }}
 						transition={{ duration: 0.6, delay: 0.3 }}
 						variants={{
 							visible: { opacity: 1, y: 0 },
 							hidden: { opacity: 0, y: "-50%" },
 						}}
-						className={classes.link}
 					>
-						<Button
+						<button
+							className={classes.button}
 							onClick={() => router.push("/portfolio")}
-							style={{
-								color: "white",
-							}}
-							variant="outline"
-							color="yellow"
-							size="md"
 						>
-							<div
-								style={{
-									display: "flex",
-									alignItems: "center",
-									justifyContent: "center",
-									gap: "0.5rem",
-								}}
-							>
-								<span>View All Projects </span>
-								<span>
-									<ArrowRight size={20} />
-								</span>
-							</div>
-						</Button>
+							<span>View All Projects </span>
+							<span>
+								<ArrowRight size={20} />
+							</span>
+						</button>
 					</motion.div>
 
 					<motion.div
@@ -71,11 +57,12 @@ export default function RecentWork(props) {
 						}}
 						className={classes.imageContainer}
 					>
-						<Image
-							height={"200px"}
-							width={"200px"}
-							src="/images/proudCoder.svg"
+						<img
+							// height={"200px"}
+							// width={"200px"}
+							src="/images/SVG/Chubbs_4 DrawKit_Vector_Illustrations_.svg"
 							alt="proud coder image"
+							className={classes.image}
 						/>
 					</motion.div>
 				</div>

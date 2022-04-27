@@ -1,6 +1,5 @@
 .footer {
 	padding: 2rem 2rem;
-
 	text-align: center;
 	background-color: white;
 }
@@ -21,4 +20,25 @@
 	display: flex;
 	justify-content: center;
 	gap: 1.5rem;
+}
+
+@media (min-width: 950px) {
+	.footer {
+		padding: 1rem 4rem;
+	}
+	.main {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.text {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.logos {
+		margin-top: 0rem;
+	}
 }
