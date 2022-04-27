@@ -2,7 +2,7 @@ import Footer from "../components/General/Footer/Footer"
 import MainHero from "../components/General/MainHero/MainHero"
 import Introduction from "../components/HomeComponents/Introduction/Introduction"
 import RecentWork from "../components/HomeComponents/RecentWork/RecentWork"
-import classes from "../styles/home.module.css"
+import classes from "../styles/Home.module.css"
 
 export default function Home() {
 	return (
