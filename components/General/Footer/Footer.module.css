@@ -1,0 +1,24 @@
+.footer {
+	padding: 2rem 2rem;
+
+	text-align: center;
+	background-color: white;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+}
+
+.main p {
+	font-size: 0.8rem;
+	font-weight: 400;
+}
+
+.logos {
+	margin-top: 1rem;
+	display: flex;
+	justify-content: center;
+	gap: 1.5rem;
+}

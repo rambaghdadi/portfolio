@@ -1,0 +1,156 @@
+.header {
+	padding: 1rem 2rem;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	color: white;
+}
+
+.opened {
+	background-color: rgb(255, 255, 255);
+	position: fixed;
+	align-items: flex-start;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100vh;
+	width: 100%;
+	box-shadow: 0 0 0 0.8rem rgb(255, 213, 0) inset;
+	z-index: 100;
+	transition: all 0.3s;
+	color: #333;
+}
+
+.main {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.burger {
+	z-index: 1000;
+}
+
+.menuContainer {
+	display: none;
+}
+
+.opened .menuContainer {
+	z-index: 1000;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 30%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	color: #333;
+}
+
+.navbar {
+	flex: 1 0 auto;
+}
+
+.navbar ul {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4rem;
+}
+
+.navbar ul li {
+	list-style: none;
+	font-size: 1.2rem;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.disabled {
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+.disabled a {
+	color: rgb(255, 196, 0);
+}
+
+.contactButton {
+	display: none;
+}
+
+/* Nav Footer */
+
+.navFooter {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	flex: 0 1 auto;
+	margin-bottom: 7rem;
+}
+
+.navFooterText {
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	letter-spacing: 1.2px;
+	font-weight: 500;
+}
+
+.logos {
+	display: flex;
+	gap: 2.5rem;
+}
+
+.logo {
+	cursor: pointer;
+}
+
+.logo:hover {
+	flex: 1 0 auto;
+	padding-bottom: 3px;
+}
+
+@media (min-width: 800px) {
+	.burger {
+		display: none;
+	}
+
+	.menuContainer {
+		position: static;
+		display: block;
+	}
+
+	.navbar ul {
+		flex-direction: row;
+		gap: 2rem;
+	}
+
+	.navbar ul li {
+		list-style: none;
+		font-size: 0.9rem;
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+
+	.contactButton {
+		display: block;
+	}
+	.contactButton p {
+		font-size: 0.9rem;
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+
+	.navFooter {
+		display: none;
+	}
+}
