@@ -1,7 +1,6 @@
 .main {
 	background: linear-gradient(rgb(191, 0, 255), rgb(255, 0, 149));
-	background-position: center;
-	background-size: cover;
-	/* height: 100%; */
+	width: 100vw;
 	padding-top: 5rem;
+	position: relative;
 }

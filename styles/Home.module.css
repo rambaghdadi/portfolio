@@ -4,8 +4,7 @@
 		rgb(128, 0, 255),
 		rgb(128, 0, 255)
 	);
-	background-position: center;
-	background-size: cover;
-
+	width: 100vw;
 	padding-top: 5rem;
+	position: relative;
 }
