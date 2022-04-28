@@ -12,7 +12,13 @@
 
 .main p {
 	font-size: 0.8rem;
-	font-weight: 400;
+	font-family: var(--font-regular);
+}
+
+.text {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
 }
 
 .logos {

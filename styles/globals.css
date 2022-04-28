@@ -1,9 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
+/* @font-face {
+	font-family: "Ginger Bold";
+	src: url("/fonts/F37 Ginger Bold.otf");
+} */
+
+@font-face {
+	font-family: "Ginger Regular";
+	src: url("/fonts/F37 Ginger Regular.ttf");
+}
+
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+}
+
+:root {
+	--font-regular: "Ginger Regular", sans-serif;
+	/* --font-bold: "Ginger Bold", sans-serif; */
+	--font-poppings: "Poppins", sans-serif;
 }
 
 html,
@@ -17,7 +33,7 @@ body {
 
 body {
 	font-size: 62.5%;
-	font-family: "Poppins", sans-serif;
+	font-family: "Ginger Regular", sans-serif;
 	position: relative;
 }
 
