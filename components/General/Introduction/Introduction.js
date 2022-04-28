@@ -1,7 +1,7 @@
 import classes from "./Introduction.module.css"
 import { AnimatePresence, motion } from "framer-motion"
 
-export default function Introduction() {
+export default function Introduction(props) {
 	return (
 		<section className={classes.main}>
 			<AnimatePresence>
@@ -16,15 +16,10 @@ export default function Introduction() {
 					}}
 					className={classes.container}
 				>
-					<p>Welcome</p>
+					<p>{props.title}</p>
 					<div className={classes.supportingText}>
-						<h1>
-							My name is Ram Baghdadi, and I am a self-taught web developer.
-						</h1>
-						<p>
-							Lorem ipsum ipsum dolor sit amet consectetur adipisicing elit.
-							Voluptas dolores mollitia incidunt non minus obcaecati ducimus.
-						</p>
+						<h1>{props.main}</h1>
+						<p>{props.text}</p>
 					</div>
 				</motion.div>
 			</AnimatePresence>

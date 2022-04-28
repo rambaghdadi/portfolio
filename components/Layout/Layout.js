@@ -8,7 +8,7 @@ export default function Layout({ children }) {
 		// <div style={{ height: "100vh", width: "100vw" }}>
 		// 	<div style={{ position: "absolute", height: "100%", width: "100vw" }}>
 		<LazyMotion features={domAnimation}>
-			<AnimatePresence initial={false} exitBeforeEnter={false}>
+			<AnimatePresence initial={true} exitBeforeEnter={false}>
 				<m.div
 					key={router.route.concat(slideLeft.name)}
 					initial="initial"
