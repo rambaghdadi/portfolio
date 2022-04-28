@@ -24,7 +24,7 @@ export default function ContactMeModal(props) {
 				/>
 				<div className={classes.modalContent}>
 					<div className={classes.modalContentMain}>
-						<p>Let's Talk</p>
+						<p>Let&apos;s Talk</p>
 						<h1>hello@ram.com</h1>
 					</div>
 					<div className={classes.modalContentSecondary}>
