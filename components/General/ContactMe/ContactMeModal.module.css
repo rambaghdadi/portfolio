@@ -1,0 +1,99 @@
+.overlay {
+	background-color: white;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
+	opacity: 1;
+	box-shadow: 0 0 0 1.5rem rgb(247, 218, 0) inset;
+}
+
+.modal {
+	position: fixed;
+	top: 5%;
+	left: 5%;
+	right: 5%;
+	bottom: 5%;
+}
+
+.modalContent {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	height: 100%;
+}
+
+.modalContentMain {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	z-index: 10000;
+}
+
+.modalContentMain p {
+	font-size: 2rem;
+	z-index: 10000;
+}
+
+.modalContentMain h1 {
+	font-size: 5rem;
+	z-index: 10000;
+	/* text-transform: ; */
+}
+
+.modalContentSecondary {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transform: translate(0, 250%);
+	gap: 1rem;
+	z-index: 10000;
+}
+
+.modalContentSecondary p {
+	font-size: 0.8rem;
+	text-transform: uppercase;
+}
+
+.logos {
+	display: flex;
+	gap: 1rem;
+}
+
+.button {
+	position: absolute;
+	right: 0;
+}
+
+@media (min-width: 800px) {
+	.overlay::before {
+		content: "";
+
+		z-index: 0;
+		background-color: rgba(86, 62, 59, 0.044);
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform-origin: 50% 0;
+		transform: translate(150%) rotate(-28deg) scale(7);
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@media (min-width: 1200px) {
+	.overlay::before {
+		transform: translate(120%) rotate(-28deg) scale(7);
+	}
+}
+@media (min-width: 1400px) {
+	.overlay::before {
+		transform: translate(100%) rotate(-28deg) scale(7);
+	}
+}

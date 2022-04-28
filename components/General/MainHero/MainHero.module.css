@@ -17,22 +17,22 @@
 }
 
 .main h1 {
-	font-size: 5rem;
+	font-size: 7rem;
 	z-index: 100;
 }
 
 .imgContainer img {
-	width: 20rem !important;
+	width: 25rem !important;
 	position: absolute;
 	z-index: 0;
 	top: 50%;
 	left: 50%;
-	transform: translate(-20%, -50%) scaleX(-1);
+	transform: translate(-25%, -50%) scaleX(-1);
 	transition: all 0.3s;
 }
 
 .imgContainer img:hover {
-	transform: translate(-20%, -55%) scaleX(-1);
+	transform: translate(-25%, -55%) scaleX(-1);
 }
 
 .arrow {

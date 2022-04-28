@@ -98,7 +98,7 @@ export default function Navbar(props) {
 							</div>
 						</motion.div>
 					</div>
-					<div className={classes.contactButton}>
+					<div onClick={props.onClick} className={classes.contactButton}>
 						<p>Contact</p>
 					</div>
 				</div>

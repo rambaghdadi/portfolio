@@ -143,6 +143,7 @@
 
 	.contactButton {
 		display: block;
+		cursor: pointer;
 	}
 	.contactButton p {
 		font-size: 0.9rem;
