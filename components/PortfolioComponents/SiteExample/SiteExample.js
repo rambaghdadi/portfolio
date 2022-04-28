@@ -10,7 +10,7 @@ export default function SiteExample(props) {
 					<p>{props.main}</p>
 					<p className={classes.link}>
 						Visit:
-						<a target="_blank" href={props.link}>
+						<a target="_blank" rel="noreferrer" href={props.link}>
 							{props.linkName}
 						</a>
 					</p>
