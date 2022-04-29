@@ -8,7 +8,6 @@ export default function MainHero(props) {
 
 	useEffect(() => {
 		const onScroll = () => setOffset(window.pageYOffset)
-		console.log(offset)
 
 		window.removeEventListener("scroll", onScroll)
 		window.addEventListener("scroll", onScroll, { passive: true })

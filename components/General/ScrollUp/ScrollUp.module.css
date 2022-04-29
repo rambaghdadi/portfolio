@@ -1,0 +1,6 @@
+.main {
+	position: fixed;
+	top: 3rem;
+	right: 5rem;
+	z-index: 1;
+}

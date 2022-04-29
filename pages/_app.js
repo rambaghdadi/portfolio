@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { useState } from "react"
 import ContactMeModal from "../components/General/ContactMe/ContactMeModal"
 import Navbar from "../components/General/Navbar/Navbar"
+import ScrollUp from "../components/General/ScrollUp/ScrollUp"
 import Layout from "../components/Layout/Layout"
 import "../styles/globals.css"
 
@@ -28,6 +29,7 @@ function MyApp({ Component, pageProps }) {
 					/>
 				)}
 			</AnimatePresence>
+			<ScrollUp />
 			<Layout>
 				<Component {...pageProps} />
 			</Layout>

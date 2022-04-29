@@ -18,6 +18,7 @@
 
 .main h1 {
 	font-size: 7rem;
+	letter-spacing: -0.02em;
 	z-index: 100;
 }
 
@@ -42,10 +43,10 @@
 
 @media (min-width: 700px) {
 	.main h1 {
-		font-size: 8rem;
+		font-size: 12rem;
 	}
 	.imgContainer img {
-		width: 30rem !important;
+		width: 40rem !important;
 	}
 }
 @media (min-width: 1000px) {
