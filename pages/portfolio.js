@@ -12,7 +12,7 @@ export default function Portfolio(props) {
 				<Introduction
 					title={"Projects"}
 					main={
-						"Below you will find a list of projects I worked on since I started learning web development."
+						"Below you will find a list of projects I created since I started learning web development."
 					}
 					text={
 						"Each list item will outline the technologies used to build it. Feel free to click-through to the actual websites for a more hands on experience."

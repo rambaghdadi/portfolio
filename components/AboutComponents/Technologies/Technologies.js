@@ -49,7 +49,7 @@ export default function Technologies(props) {
 				>
 					<p>Stack Experience</p>
 					<div className={classes.supportingText}>
-						<h1>Technologies I have worked with so far.</h1>
+						<h1></h1>
 					</div>
 				</motion.div>
 				<div className={classes.tableContainer}>

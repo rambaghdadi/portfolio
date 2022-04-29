@@ -39,6 +39,16 @@
 .arrow {
 	position: absolute;
 	top: 90%;
+	animation: upAndDown 0.7s linear infinite alternate !important;
+}
+
+@keyframes upAndDown {
+	from {
+		transform: translateY(0%);
+	}
+	to {
+		transform: translateY(40%);
+	}
 }
 
 @media (min-width: 700px) {

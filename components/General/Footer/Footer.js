@@ -11,13 +11,25 @@ export default function Footer(props) {
 				</div>
 
 				<div className={classes.logos}>
-					<Mail size={30} fill="black" stroke="white" />
-					<BrandGithub size={30} fill="black" stroke="white" />
-					<BrandLinkedin size={30} fill="black" stroke="white" />
+					<a rel="noreferrer" href="mailto:ram_baghdadi@hotmail.com">
+						<Mail size={30} fill="black" stroke="white" />
+					</a>
+					<a
+						rel="noreferrer"
+						target="_blank"
+						href="https://github.com/rambaghdadi"
+					>
+						<BrandGithub size={30} fill="black" stroke="white" />
+					</a>
+					<a
+						rel="noreferrer"
+						target="_blank"
+						href="https://uk.linkedin.com/in/rambaghdadi"
+					>
+						<BrandLinkedin size={30} fill="black" stroke="white" />
+					</a>
 				</div>
 			</div>
 		</footer>
 	)
 }
-
-// TODO add links to logos

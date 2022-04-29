@@ -21,6 +21,7 @@ export default function ContactMeModal(props) {
 					strokeWidth={2}
 					color={"black"}
 					onClick={props.exit}
+					style={{ cursor: "pointer" }}
 				/>
 				<div className={classes.modalContent}>
 					<div className={classes.modalContentMain}>
@@ -30,9 +31,23 @@ export default function ContactMeModal(props) {
 					<div className={classes.modalContentSecondary}>
 						<p>Social</p>
 						<div className={classes.logos}>
-							<Mail />
-							<BrandGithub />
-							<BrandLinkedin />
+							<a rel="noreferrer" href="mailto:ram_baghdadi@hotmail.com">
+								<Mail />
+							</a>
+							<a
+								rel="noreferrer"
+								target="_blank"
+								href="https://github.com/rambaghdadi"
+							>
+								<BrandGithub />
+							</a>
+							<a
+								rel="noreferrer"
+								target="_blank"
+								href="https://uk.linkedin.com/in/rambaghdadi"
+							>
+								<BrandLinkedin />
+							</a>
 						</div>
 					</div>
 				</div>
