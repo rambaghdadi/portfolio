@@ -4,31 +4,49 @@ import classes from "./Technologies.module.css"
 
 export default function Technologies(props) {
 	const elements = [
-		{ 1: "htmllogo.svg", 2: "csslogo.svg", 3: "jslogo.svg" },
-		{ 1: "reactlogo.svg", 2: "nextjslogo.svg", 3: "mongodb.svg" },
-		{ 1: "firebase.svg", 2: "gitlogo.svg", 3: "pythonlogo.svg" },
+		{
+			1: ["htmllogo.svg", "HTML"],
+			2: ["csslogo.svg", "CSS"],
+			3: ["jslogo.svg", "JavaScript"],
+		},
+		{
+			1: ["reactlogo.svg", "React"],
+			2: ["nextjslogo.svg", "NextJS"],
+			3: ["mongodb.svg", "MongoDB"],
+		},
+		{
+			1: ["firebase.svg", "Firebase"],
+			2: ["gitlogo.svg", "Git"],
+			3: ["pythonlogo.svg", "Python"],
+		},
 	]
 	const rows = elements.map((element) => (
-		<tr key={element[1]}>
+		<tr className={classes.tableRow} key={element[1]}>
 			<td>
+				<p>{element[1][1]}</p>
 				<img
 					height={"75px"}
 					width={"75px"}
-					src={`/images/logos/${element[1]}`}
+					src={`/images/logos/${element[1][0]}`}
+					alt={element[1][1]}
 				></img>
 			</td>
 			<td>
+				<p>{element[2][1]}</p>
 				<img
 					height={"75px"}
 					width={"75px"}
-					src={`/images/logos/${element[2]}`}
+					src={`/images/logos/${element[2][0]}`}
+					alt={element[2][1]}
 				></img>
 			</td>
 			<td>
+				<p>{element[3][1]}</p>
 				<img
 					height={"75"}
 					width={"75"}
-					src={`/images/logos/${element[3]}`}
+					src={`/images/logos/${element[3][0]}`}
+					alt={element[3][1]}
 				></img>
 			</td>
 		</tr>
