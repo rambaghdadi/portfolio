@@ -70,3 +70,8 @@ p {
 	padding-top: 5rem;
 	position: relative;
 }
+
+.sites-section section:nth-child(even) {
+	background-color: #dce2e1;
+	z-index: 50000;
+}

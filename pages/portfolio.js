@@ -18,19 +18,21 @@ export default function Portfolio(props) {
 						"Each list item will outline the technologies used to build it. Feel free to click-through to the actual websites for a more hands on experience."
 					}
 				/>
-				{examples.map((example) => {
-					return (
-						<SiteExample
-							key={example.title}
-							title={example.title}
-							subTitle={example.subTitle}
-							main={example.main}
-							link={example.link}
-							linkName={example.linkName}
-							src={example.src}
-						/>
-					)
-				})}
+				<div className="sites-section">
+					{examples.map((example) => {
+						return (
+							<SiteExample
+								key={example.title}
+								title={example.title}
+								subTitle={example.subTitle}
+								main={example.main}
+								link={example.link}
+								linkName={example.linkName}
+								src={example.src}
+							/>
+						)
+					})}
+				</div>
 				<Footer />
 			</div>
 		</>
