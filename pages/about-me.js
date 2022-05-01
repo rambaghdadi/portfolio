@@ -1,3 +1,4 @@
+import ChubbsWonder from "../components/AboutComponents/ChubbsWonder"
 import Technologies from "../components/AboutComponents/Technologies/Technologies"
 import Footer from "../components/General/Footer/Footer"
 import Introduction from "../components/General/Introduction/Introduction"
@@ -7,7 +8,9 @@ export default function AboutMe(props) {
 	return (
 		<>
 			<div className="about-page">
-				<MainHero text={"What."} chubbs={"5"} />
+				<MainHero text={"What."}>
+					<ChubbsWonder />
+				</MainHero>
 				<Introduction
 					title={"About Me"}
 					main={

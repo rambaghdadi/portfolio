@@ -3,12 +3,13 @@ import Introduction from "../components/General/Introduction/Introduction"
 import MainHero from "../components/General/MainHero/MainHero"
 import SiteExample from "../components/PortfolioComponents/SiteExample/SiteExample"
 import examples from "../lib/PortfolioExamples"
+import ChubbsConfetti from "../components/PortfolioComponents/ChubbsConfetti"
 
 export default function Portfolio(props) {
 	return (
 		<>
 			<div className="portfolio-page">
-				<MainHero text={"Work."} chubbs={"2"} />
+				<MainHero text={"Work."}>{<ChubbsConfetti />}</MainHero>
 				<Introduction
 					title={"Projects"}
 					main={

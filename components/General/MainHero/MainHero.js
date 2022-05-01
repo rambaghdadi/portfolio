@@ -27,12 +27,7 @@ export default function MainHero(props) {
 						className={classes.container}
 					>
 						<h1>{props.text}</h1>
-						<div className={classes.imgContainer}>
-							<img
-								src={`/images/SVG/Chubbs_${props.chubbs} DrawKit_Vector_Illustrations_.svg`}
-								alt="illustration"
-							/>
-						</div>
+						<div className={classes.svgContainer}>{props.children}</div>
 					</motion.div>
 				)}
 			</AnimatePresence>
