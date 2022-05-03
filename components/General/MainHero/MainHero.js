@@ -48,5 +48,3 @@ export default function MainHero(props) {
 		</div>
 	)
 }
-
-//TODO Exit Animation

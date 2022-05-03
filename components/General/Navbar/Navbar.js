@@ -11,8 +11,6 @@ export default function Navbar(props) {
 	const router = useRouter()
 	const [opened, setOpened] = useState(false)
 
-	// TODO fix exit animation
-
 	return (
 		<>
 			<motion.header

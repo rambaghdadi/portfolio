@@ -15,7 +15,7 @@ const ChubbsCoffee = (props) => (
 				}
 			</style>
 		</defs>
-		<title>{"Chubbs_11 by growwwkit"}</title>
+		<title>{"Chubbs"}</title>
 
 		<path
 			className="clss--1 arm"
