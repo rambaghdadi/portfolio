@@ -17,7 +17,7 @@ export default function AboutMe(props) {
 						"I recently took the decision to switch careers and focus on web development."
 					}
 					text={
-						"I am passionate about programming, design, and learning new technologies. As you will see from my tech stack below, I am currently invested in React, while leveraging the power of NoSQL databases to build my projects. I am currently looking for new work opportunities in the tech industry."
+						"I am passionate about programming, design, and learning new technologies. As you will see from my tech stack below, I am currently invested in React, while leveraging the power of NoSQL databases to build my projects. I am currently looking for new work opportunities."
 					}
 				/>
 				<Technologies />
