@@ -1,14 +1,52 @@
 import { AnimatePresence, LazyMotion, domAnimation, m } from "framer-motion"
 import { useRouter } from "next/router"
+import { useEffect, useState } from "react"
 
 export default function Layout({ children }) {
 	const router = useRouter()
+	const [previousPage, setPreviousPage] = useState(router.asPath)
+	const [currentPage, setCurrentPage] = useState(router.asPath)
+	const path = router.asPath
+
+	useEffect(() => {
+		setPreviousPage(currentPage)
+		setCurrentPage(path)
+	}, [path])
+
+	const pages = ["/", "/about-me", "/portfolio"]
+
+	function initialSlideDirection() {
+		const previousPageIndex = pages.indexOf(previousPage)
+		const currentPageIndex = pages.indexOf(currentPage)
+		return currentPageIndex < previousPageIndex ? "200%" : "-200%"
+	}
+	function exitSlideDirection() {
+		const previousPageIndex = pages.indexOf(previousPage)
+		const currentPageIndex = pages.indexOf(currentPage)
+		return currentPageIndex < previousPageIndex ? "-200%" : "200%"
+	}
+
+	const slideLeft = {
+		name: "Slide Left",
+		variants: {
+			initial: {
+				x: initialSlideDirection(),
+				scale: 3,
+			},
+			animate: {
+				x: 0,
+				scale: 1,
+			},
+			exit: {
+				x: exitSlideDirection(),
+				scale: 3,
+			},
+		},
+	}
 
 	return (
-		// <div style={{ height: "100vh", width: "100vw" }}>
-		// 	<div style={{ position: "absolute", height: "100%", width: "100vw" }}>
 		<LazyMotion features={domAnimation}>
-			<AnimatePresence initial={true} exitBeforeEnter={false}>
+			<AnimatePresence initial={false} exitBeforeEnter={false}>
 				<m.div
 					key={router.route.concat(slideLeft.name)}
 					initial="initial"
@@ -30,25 +68,5 @@ export default function Layout({ children }) {
 				</m.div>
 			</AnimatePresence>
 		</LazyMotion>
-		// 	</div>
-		// </div>
 	)
-}
-
-const slideLeft = {
-	name: "Slide Left",
-	variants: {
-		initial: {
-			x: "200%",
-			scale: 3,
-		},
-		animate: {
-			x: 0,
-			scale: 1,
-		},
-		exit: {
-			x: "-200%",
-			scale: 3,
-		},
-	},
 }

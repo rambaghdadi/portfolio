@@ -20,8 +20,8 @@ export default function Technologies(props) {
 			3: ["pythonlogo.svg", "Python"],
 		},
 	]
-	const rows = elements.map((element) => (
-		<tr className={classes.tableRow} key={element[1]}>
+	const rows = elements.map((element, i) => (
+		<tr className={classes.tableRow} key={i}>
 			<td>
 				<p>{element[1][1]}</p>
 				<img
@@ -51,10 +51,12 @@ export default function Technologies(props) {
 			</td>
 		</tr>
 	))
+
 	return (
 		<section className={classes.section}>
 			<AnimatePresence>
 				<motion.div
+					key={"anim"}
 					initial="hidden"
 					whileInView={"visible"}
 					viewport={{ once: true }}
