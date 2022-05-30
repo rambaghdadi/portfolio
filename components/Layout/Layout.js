@@ -4,33 +4,33 @@ import { useEffect, useState } from "react"
 
 export default function Layout({ children }) {
 	const router = useRouter()
-	const [previousPage, setPreviousPage] = useState(router.asPath)
-	const [currentPage, setCurrentPage] = useState(router.asPath)
-	const path = router.asPath
+	// const [previousPage, setPreviousPage] = useState(router.asPath)
+	// const [currentPage, setCurrentPage] = useState(router.asPath)
+	// const path = router.asPath
 
-	useEffect(() => {
-		setPreviousPage(currentPage)
-		setCurrentPage(path)
-	}, [path])
+	// useEffect(() => {
+	// 	setPreviousPage(currentPage)
+	// 	setCurrentPage(path)
+	// }, [path])
 
-	const pages = ["/", "/about-me", "/portfolio"]
+	// const pages = ["/", "/about-me", "/portfolio"]
 
-	function initialSlideDirection() {
-		const previousPageIndex = pages.indexOf(previousPage)
-		const currentPageIndex = pages.indexOf(currentPage)
-		return currentPageIndex < previousPageIndex ? "200%" : "-200%"
-	}
-	function exitSlideDirection() {
-		const previousPageIndex = pages.indexOf(previousPage)
-		const currentPageIndex = pages.indexOf(currentPage)
-		return currentPageIndex < previousPageIndex ? "-200%" : "200%"
-	}
+	// function initialSlideDirection() {
+	// 	const previousPageIndex = pages.indexOf(previousPage)
+	// 	const currentPageIndex = pages.indexOf(currentPage)
+	// 	return currentPageIndex < previousPageIndex ? "200%" : "-200%"
+	// }
+	// function exitSlideDirection() {
+	// 	const previousPageIndex = pages.indexOf(previousPage)
+	// 	const currentPageIndex = pages.indexOf(currentPage)
+	// 	return currentPageIndex < previousPageIndex ? "-200%" : "200%"
+	// }
 
 	const slideLeft = {
 		name: "Slide Left",
 		variants: {
 			initial: {
-				x: initialSlideDirection(),
+				x: "200%",
 				scale: 3,
 			},
 			animate: {
@@ -38,7 +38,7 @@ export default function Layout({ children }) {
 				scale: 1,
 			},
 			exit: {
-				x: exitSlideDirection(),
+				x: "-200%",
 				scale: 3,
 			},
 		},
@@ -46,7 +46,7 @@ export default function Layout({ children }) {
 
 	return (
 		<LazyMotion features={domAnimation}>
-			<AnimatePresence initial={false} exitBeforeEnter={false}>
+			<AnimatePresence initial={true} exitBeforeEnter={false}>
 				<m.div
 					key={router.route.concat(slideLeft.name)}
 					initial="initial"
