@@ -12,12 +12,12 @@ export default function Technologies(props) {
 		{
 			1: ["reactlogo.svg", "React"],
 			2: ["nextjslogo.svg", "NextJS"],
-			3: ["mongodb.svg", "MongoDB"],
+			3: ["nodejsLogo.svg", "Node JS"],
 		},
 		{
 			1: ["firebase.svg", "Firebase"],
-			2: ["gitlogo.svg", "Git"],
-			3: ["pythonlogo.svg", "Python"],
+			2: ["mongodb.svg", "MongoDB"],
+			3: ["gitlogo.svg", "Git"],
 		},
 	]
 	const rows = elements.map((element, i) => (
