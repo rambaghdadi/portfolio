@@ -26,12 +26,12 @@ export default function ContactMeModal(props) {
 				<div className={classes.modalContent}>
 					<div className={classes.modalContentMain}>
 						<p>Let&apos;s Talk</p>
-						<h1>ram.baghdady@gmail.com</h1>
+						<h1>hello@ram-web.dev</h1>
 					</div>
 					<div className={classes.modalContentSecondary}>
 						<p>Social</p>
 						<div className={classes.logos}>
-							<a rel="noreferrer" href="mailto:ram_baghdadi@hotmail.com">
+							<a rel="noreferrer" href="mailto:hello@ram-web.dev">
 								<Mail />
 							</a>
 							<a
@@ -41,13 +41,13 @@ export default function ContactMeModal(props) {
 							>
 								<BrandGithub />
 							</a>
-							<a
+							{/* <a
 								rel="noreferrer"
 								target="_blank"
 								href="https://uk.linkedin.com/in/rambaghdadi"
 							>
 								<BrandLinkedin />
-							</a>
+							</a> */}
 						</div>
 					</div>
 				</div>

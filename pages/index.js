@@ -14,7 +14,7 @@ export default function Home() {
 				<Introduction
 					title={"Welcome"}
 					main={
-						"My name is Ram Baghdadi, and I am a self-taught front-end web developer."
+						"My name is Ram, and I am a self-taught front-end web developer."
 					}
 					text={
 						"I created this website to house the different projects I  created since I started programming in late 2021. Please feel free to browse, and reach out with any work opportunities."

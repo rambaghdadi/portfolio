@@ -6,12 +6,12 @@ export default function Footer(props) {
 		<footer className={classes.footer}>
 			<div className={classes.main}>
 				<div className={classes.text}>
-					<p>Ram Baghdadi</p>
+					{/* <p>Ram</p> */}
 					<p>London, United Kingdom</p>
 				</div>
 
 				<div className={classes.logos}>
-					<a rel="noreferrer" href="mailto:ram_baghdadi@hotmail.com">
+					<a rel="noreferrer" href="mailto:hello@ram-web.dev">
 						<Mail size={30} fill="black" stroke="white" />
 					</a>
 					<a
@@ -21,13 +21,13 @@ export default function Footer(props) {
 					>
 						<BrandGithub size={30} fill="black" stroke="white" />
 					</a>
-					<a
+					{/* <a
 						rel="noreferrer"
 						target="_blank"
 						href="https://uk.linkedin.com/in/rambaghdadi"
 					>
 						<BrandLinkedin size={30} fill="black" stroke="white" />
-					</a>
+					</a> */}
 				</div>
 			</div>
 		</footer>
