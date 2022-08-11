@@ -38,22 +38,6 @@ function MyApp({ Component, pageProps }) {
 				<link rel="icon" href="/images/Ram-logos_transparent.png" />
 
 				<title>Ram - Portfolio</title>
-				<Script
-					strategy="afterInteractive"
-					async
-					src="https://www.googletagmanager.com/gtag/js?id=G-QC967G8X09"
-				></Script>
-				<Script strategy="afterInteractive">
-					dangerouslySetInnerHTML=
-					{{
-						__html: `
-						window.dataLayer = window.dataLayer || [];
-						function gtag(){dataLayer.push(arguments);}
-						gtag('js', new Date());
-					  
-						gtag('config', 'G-QC967G8X09');`,
-					}}
-				</Script>
 			</Head>
 			<Navbar
 				onClick={() => {
@@ -78,6 +62,22 @@ function MyApp({ Component, pageProps }) {
 			) : (
 				<Component {...pageProps} />
 			)}
+			<Script
+				strategy="afterInteractive"
+				async
+				src="https://www.googletagmanager.com/gtag/js?id=G-QC967G8X09"
+			></Script>
+			<Script
+				strategy="afterInteractive"
+				dangerouslySetInnerHTML={{
+					__html: `
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments);}
+						gtag('js', new Date());
+					  
+						gtag('config', 'G-QC967G8X09');`,
+				}}
+			></Script>
 		</>
 	)
 }
