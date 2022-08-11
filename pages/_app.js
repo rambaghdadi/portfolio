@@ -63,11 +63,13 @@ function MyApp({ Component, pageProps }) {
 				<Component {...pageProps} />
 			)}
 			<Script
+				id="g-analytics-script-1"
 				strategy="afterInteractive"
 				async
 				src="https://www.googletagmanager.com/gtag/js?id=G-QC967G8X09"
-			></Script>
+			/>
 			<Script
+				id="g-analytics-script-2"
 				strategy="afterInteractive"
 				dangerouslySetInnerHTML={{
 					__html: `
@@ -77,7 +79,7 @@ function MyApp({ Component, pageProps }) {
 					  
 						gtag('config', 'G-QC967G8X09');`,
 				}}
-			></Script>
+			/>
 		</>
 	)
 }
