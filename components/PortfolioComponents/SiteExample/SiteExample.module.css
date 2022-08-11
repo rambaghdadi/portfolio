@@ -2,7 +2,7 @@
 	background-color: #e7eeed;
 	color: #333;
 	border-bottom: 0.5px solid rgba(178, 178, 178, 0.667);
-	height: 45vh;
+	height: 50vh;
 	padding: 1rem 2rem;
 	text-align: center;
 	display: flex;
@@ -49,6 +49,12 @@
 	display: flex;
 	gap: 0.5rem;
 	align-self: center;
+}
+
+@media (min-width: 400px) {
+	.section {
+		height: 45vh;
+	}
 }
 
 @media (min-width: 600px) {

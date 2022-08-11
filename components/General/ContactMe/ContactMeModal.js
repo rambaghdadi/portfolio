@@ -41,13 +41,13 @@ export default function ContactMeModal(props) {
 							>
 								<BrandGithub />
 							</a>
-							{/* <a
+							<a
 								rel="noreferrer"
 								target="_blank"
 								href="https://uk.linkedin.com/in/rambaghdadi"
 							>
 								<BrandLinkedin />
-							</a> */}
+							</a>
 						</div>
 					</div>
 				</div>

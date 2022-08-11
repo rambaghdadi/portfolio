@@ -74,24 +74,38 @@ export default function Navbar(props) {
 							<div className={classes.navFooter}>
 								<p className={classes.navFooterText}>Get In Touch</p>
 								<div className={classes.logos}>
-									<Mail
-										className={classes.logo}
-										size={25}
-										strokeWidth={2}
-										color={"black"}
-									/>
-									<BrandGithub
-										className={classes.logo}
-										size={25}
-										strokeWidth={2}
-										color={"black"}
-									/>
-									<BrandLinkedin
-										className={classes.logo}
-										size={25}
-										strokeWidth={2}
-										color={"black"}
-									/>
+									<a rel="noreferrer" href="mailto:hello@ram-web.dev">
+										<Mail
+											className={classes.logo}
+											size={25}
+											strokeWidth={2}
+											color={"black"}
+										/>
+									</a>
+									<a
+										rel="noreferrer"
+										target="_blank"
+										href="https://github.com/rambaghdadi"
+									>
+										<BrandGithub
+											className={classes.logo}
+											size={25}
+											strokeWidth={2}
+											color={"black"}
+										/>
+									</a>
+									<a
+										rel="noreferrer"
+										target="_blank"
+										href="https://uk.linkedin.com/in/rambaghdadi"
+									>
+										<BrandLinkedin
+											className={classes.logo}
+											size={25}
+											strokeWidth={2}
+											color={"black"}
+										/>
+									</a>
 								</div>
 							</div>
 						</motion.div>
