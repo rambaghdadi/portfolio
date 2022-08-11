@@ -1,5 +1,6 @@
 import { AnimatePresence } from "framer-motion"
 import Head from "next/head"
+import Script from "next/script"
 import { useEffect, useState } from "react"
 import ContactMeModal from "../components/General/ContactMe/ContactMeModal"
 import Navbar from "../components/General/Navbar/Navbar"
@@ -37,6 +38,22 @@ function MyApp({ Component, pageProps }) {
 				<link rel="icon" href="/images/Ram-logos_transparent.png" />
 
 				<title>Ram - Portfolio</title>
+				<Script
+					strategy="afterInteractive"
+					async
+					src="https://www.googletagmanager.com/gtag/js?id=G-QC967G8X09"
+				></Script>
+				<Script strategy="afterInteractive">
+					dangerouslySetInnerHTML=
+					{{
+						__html: `
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments);}
+						gtag('js', new Date());
+					  
+						gtag('config', 'G-QC967G8X09');`,
+					}}
+				</Script>
 			</Head>
 			<Navbar
 				onClick={() => {
