@@ -10,8 +10,8 @@ export default function Technologies(props) {
 			3: ["jslogo.svg", "JavaScript"],
 		},
 		{
-			1: ["reactlogo.svg", "React"],
-			2: ["nextjslogo.svg", "NextJS"],
+			1: ["typescript.svg", "TypeScript"],
+			2: ["reactlogo.svg", "React"],
 			3: ["nodejsLogo.svg", "Node JS"],
 		},
 		{
