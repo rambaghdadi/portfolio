@@ -41,6 +41,10 @@
 	color: #212121e6;
 }
 
+.text a {
+	color: #1544c0;
+}
+
 .container img {
 	display: none;
 }

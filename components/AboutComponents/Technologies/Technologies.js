@@ -15,6 +15,11 @@ export default function Technologies(props) {
 			3: ["nodejsLogo.svg", "Node JS"],
 		},
 		{
+			1: ["nextjslogo.svg", "NextJS"],
+			2: ["postgresql.png", "PostgreSQL"],
+			3: ["prisma.svg", "Prisma"],
+		},
+		{
 			1: ["firebase.svg", "Firebase"],
 			2: ["mongodb.svg", "MongoDB"],
 			3: ["gitlogo.svg", "Git"],

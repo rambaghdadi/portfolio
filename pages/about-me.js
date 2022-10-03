@@ -14,10 +14,10 @@ export default function AboutMe(props) {
 				<Introduction
 					title={"About Me"}
 					main={
-						"I recently took the decision to switch careers and focus on web development."
+						"In 2021, I took the decision to switch careers and focus on web development."
 					}
 					text={
-						"I am passionate about programming, design, and learning new technologies. As you will see from my tech stack below, I am currently invested in React, while leveraging the power of NoSQL databases to build my projects. I am currently looking for new work opportunities."
+						"I am passionate about programming, design, and learning new technologies. As you will see from my tech stack below, I am currently invested in React and TypeScript. I am currently looking for new work opportunities."
 					}
 				/>
 				<Technologies />

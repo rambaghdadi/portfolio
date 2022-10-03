@@ -22,7 +22,13 @@ export default function Navbar(props) {
 				}
 			>
 				<div className={classes.main}>
-					<div style={{ pointerEvents: "none" }} className={classes.logo}>
+					<div
+						className={classes.mainLogo}
+						onClick={() => {
+							if (router.asPath === "/") return
+							router.push("/")
+						}}
+					>
 						<img
 							src={"/images/Ram-logos_white.png"}
 							alt="logo"

@@ -12,6 +12,10 @@
 	color: white;
 }
 
+.mainLogo {
+	cursor: pointer;
+}
+
 .opened {
 	background-color: rgb(255, 255, 255);
 	position: fixed;
