@@ -3,7 +3,11 @@
 import {AnimatePresence, LazyMotion, domAnimation, m} from "framer-motion"
 import {usePathname} from "next/navigation"
 
-export default function PageTransition({children}) {
+export default function PageTransition({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   const pathname = usePathname()
 
   const slideLeft = {
