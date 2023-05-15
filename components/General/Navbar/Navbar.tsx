@@ -7,6 +7,7 @@ import {useState} from "react"
 import classes from "./Navbar.module.css"
 import {motion} from "framer-motion"
 import socials from "../../../lib/Links"
+import Image from "next/image"
 
 interface INavbarProps {
   onClick: () => void
@@ -48,10 +49,11 @@ export default function Navbar({onClick}: INavbarProps) {
               router.push("/")
             }}
           >
-            <img
+            <Image
               src={"/images/Ram-logos_white.png"}
               alt="logo"
-              width={"50"}
+              width={50}
+              height={50}
               style={{opacity: opened ? "0" : "1"}}
             />
           </div>

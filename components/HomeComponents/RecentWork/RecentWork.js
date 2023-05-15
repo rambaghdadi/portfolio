@@ -3,6 +3,7 @@ import {ArrowRight} from "tabler-icons-react"
 import classes from "./RecentWork.module.css"
 import {AnimatePresence, motion} from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function RecentWork(props) {
   return (
@@ -54,7 +55,9 @@ export default function RecentWork(props) {
             }}
             className={classes.imageContainer}
           >
-            <img
+            <Image
+              height={75}
+              width={75}
               src="/images/SVG/Chubbs_4 DrawKit_Vector_Illustrations_.svg"
               alt="proud coder image"
               className={classes.image}

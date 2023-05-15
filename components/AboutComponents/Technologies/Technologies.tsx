@@ -2,6 +2,7 @@
 import {Table} from "@mantine/core"
 import {AnimatePresence, motion} from "framer-motion"
 import classes from "./Technologies.module.css"
+import Image from "next/image"
 
 export default function Technologies() {
   const elements = [
@@ -25,30 +26,30 @@ export default function Technologies() {
     <tr className={classes.tableRow} key={i}>
       <td>
         <p>{element[1][1]}</p>
-        <img
-          height={"75px"}
-          width={"75px"}
+        <Image
+          height={75}
+          width={75}
           src={`/images/logos/${element[1][0]}`}
           alt={element[1][1]}
-        ></img>
+        ></Image>
       </td>
       <td>
         <p>{element[2][1]}</p>
-        <img
-          height={"75px"}
-          width={"75px"}
+        <Image
+          height={75}
+          width={75}
           src={`/images/logos/${element[2][0]}`}
           alt={element[2][1]}
-        ></img>
+        ></Image>
       </td>
       <td>
         <p>{element[3][1]}</p>
-        <img
-          height={"75"}
-          width={"75"}
+        <Image
+          height={75}
+          width={75}
           src={`/images/logos/${element[3][0]}`}
           alt={element[3][1]}
-        ></img>
+        ></Image>
       </td>
     </tr>
   ))
