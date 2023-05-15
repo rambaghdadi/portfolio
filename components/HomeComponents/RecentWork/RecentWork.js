@@ -33,11 +33,12 @@ export default function RecentWork(props) {
             }}
           >
             <button className={classes.button}>
-              <Link href={"/portfolio"}>
+              <Link
+                style={{display: "flex", alignItems: "center", gap: "0.2rem"}}
+                href={"/portfolio"}
+              >
                 <span>View All Projects </span>
-                <span>
-                  <ArrowRight size={20} />
-                </span>
+                <ArrowRight size={20} />
               </Link>
             </button>
           </motion.div>
@@ -54,8 +55,6 @@ export default function RecentWork(props) {
             className={classes.imageContainer}
           >
             <img
-              // height={"200px"}
-              // width={"200px"}
               src="/images/SVG/Chubbs_4 DrawKit_Vector_Illustrations_.svg"
               alt="proud coder image"
               className={classes.image}

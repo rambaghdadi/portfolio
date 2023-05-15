@@ -5,8 +5,8 @@ import Link from "next/link"
 import {useRouter, usePathname} from "next/navigation"
 import {useState} from "react"
 import classes from "./Navbar.module.css"
-import {BrandGithub, BrandLinkedin, Mail} from "tabler-icons-react"
 import {motion} from "framer-motion"
+import socials from "../../../lib/Links"
 
 interface INavbarProps {
   onClick: () => void
@@ -19,6 +19,13 @@ export default function Navbar({onClick}: INavbarProps) {
     {name: "About", link: "/about-me"},
     {name: "Portfolio", link: "/portfolio"},
   ]
+
+  const socialParams = {
+    color: "black",
+    size: 25,
+    strokeWidth: 2,
+    className: "classes.logo",
+  }
 
   const router = useRouter()
   const pathname = usePathname()
@@ -79,38 +86,16 @@ export default function Navbar({onClick}: INavbarProps) {
               <div className={classes.navFooter}>
                 <p className={classes.navFooterText}>Get In Touch</p>
                 <div className={classes.logos}>
-                  <a rel="noreferrer" href="mailto:hello@ram-web.dev">
-                    <Mail
-                      className={classes.logo}
-                      size={25}
-                      strokeWidth={2}
-                      color={"black"}
-                    />
-                  </a>
-                  <a
-                    rel="noreferrer"
-                    target="_blank"
-                    href="https://github.com/rambaghdadi"
-                  >
-                    <BrandGithub
-                      className={classes.logo}
-                      size={25}
-                      strokeWidth={2}
-                      color={"black"}
-                    />
-                  </a>
-                  <a
-                    rel="noreferrer"
-                    target="_blank"
-                    href="https://uk.linkedin.com/in/rambaghdadi"
-                  >
-                    <BrandLinkedin
-                      className={classes.logo}
-                      size={25}
-                      strokeWidth={2}
-                      color={"black"}
-                    />
-                  </a>
+                  {socials(socialParams).map((social) => (
+                    <a
+                      key={social.name}
+                      rel="noreferrer"
+                      target="_blank"
+                      href={social.href}
+                    >
+                      {social.icon}
+                    </a>
+                  ))}
                 </div>
               </div>
             </motion.div>

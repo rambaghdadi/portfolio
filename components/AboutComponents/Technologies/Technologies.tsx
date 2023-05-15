@@ -3,7 +3,7 @@ import {Table} from "@mantine/core"
 import {AnimatePresence, motion} from "framer-motion"
 import classes from "./Technologies.module.css"
 
-export default function Technologies(props) {
+export default function Technologies() {
   const elements = [
     {
       1: ["htmllogo.svg", "HTML"],
@@ -13,16 +13,11 @@ export default function Technologies(props) {
     {
       1: ["typescript.svg", "TypeScript"],
       2: ["reactlogo.svg", "React"],
-      3: ["nodejsLogo.svg", "Node JS"],
+      3: ["nextjslogo.svg", "NextJS"],
     },
     {
-      1: ["nextjslogo.svg", "NextJS"],
-      2: ["postgresql.png", "PostgreSQL"],
-      3: ["prisma.svg", "Prisma"],
-    },
-    {
-      1: ["firebase.svg", "Firebase"],
-      2: ["mongodb.svg", "MongoDB"],
+      1: ["postgresql.png", "PostgreSQL"],
+      2: ["prisma.svg", "Prisma"],
       3: ["gitlogo.svg", "Git"],
     },
   ]
@@ -82,9 +77,9 @@ export default function Technologies(props) {
           <Table verticalSpacing={"md"} horizontalSpacing="md">
             <thead>
               <tr>
-                <th></th>
-                <th></th>
-                <th></th>
+                {Array.from({length: elements.length}).map((_, i) => (
+                  <th key={i}></th>
+                ))}
               </tr>
             </thead>
             <tbody>{rows}</tbody>
