@@ -24,7 +24,8 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <body>
         <Header />
         <ScrollUp />
-        <PageTransition>{children}</PageTransition>
+        {/* <PageTransition>{children}</PageTransition> */}
+        {children}
       </body>
       <Script
         id="g-analytics-script-1"

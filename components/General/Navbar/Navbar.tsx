@@ -75,13 +75,18 @@ export default function Navbar({onClick}: INavbarProps) {
               <nav className={classes.navbar}>
                 <ul>
                   {links.map(({link, name}) => (
-                    <li
-                      key={link}
+                    <Link
+                      key={name}
+                      className={
+                        pathname === link
+                          ? `${classes.disabled} ${classes.link}`
+                          : classes.link
+                      }
                       onClick={() => setOpened(false)}
-                      className={pathname === link ? classes.disabled : ""}
+                      href={link}
                     >
-                      <Link href={link}>{name}</Link>
-                    </li>
+                      {name}
+                    </Link>
                   ))}
                 </ul>
               </nav>
