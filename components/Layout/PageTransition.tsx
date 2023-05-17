@@ -2,19 +2,30 @@
 
 import {AnimatePresence, LazyMotion, domAnimation, m} from "framer-motion"
 import {usePathname} from "next/navigation"
+import {useEffect, useState} from "react"
 
 export default function PageTransition({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const [prevRouteIndex, setPrevRouteIndex] = useState(0)
+  const routesOrder = ["/", "/about-me", "/portfolio"]
+
   const pathname = usePathname()
+  const currentRouteIndex = routesOrder.indexOf(pathname)
+
+  const direction = currentRouteIndex > prevRouteIndex ? 1 : -1
+
+  useEffect(() => {
+    setPrevRouteIndex(currentRouteIndex)
+  }, [currentRouteIndex])
 
   const slideLeft = {
     name: "Slide Left",
     variants: {
       initial: {
-        x: "200%",
+        x: direction > 0 ? "200%" : "-200%",
         scale: 3,
       },
       animate: {
@@ -22,7 +33,7 @@ export default function PageTransition({
         scale: 1,
       },
       exit: {
-        x: "-200%",
+        x: direction > 0 ? "-200%" : "200%",
         scale: 3,
       },
     },
@@ -30,7 +41,7 @@ export default function PageTransition({
 
   return (
     <LazyMotion features={domAnimation}>
-      <AnimatePresence initial={false} mode="popLayout">
+      <AnimatePresence initial={false} mode="sync">
         <m.div
           key={pathname}
           initial="initial"
