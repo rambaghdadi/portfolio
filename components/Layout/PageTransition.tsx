@@ -30,7 +30,7 @@ export default function PageTransition({
 
   return (
     <LazyMotion features={domAnimation}>
-      <AnimatePresence initial={true} mode="sync">
+      <AnimatePresence initial={false} mode="popLayout">
         <m.div
           key={pathname}
           initial="initial"

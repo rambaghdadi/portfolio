@@ -43,6 +43,7 @@ p {
   width: 100vw;
   padding-top: 5rem;
   position: relative;
+  /* view-transition-name: enter-exit; */
 }
 
 .homepage {
@@ -52,6 +53,32 @@ p {
     rgb(128, 0, 255)
   );
 }
+/* 
+@keyframes enter-page {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes exit-page {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+::view-transition-old(enter-exit) {
+  animation: 0.25s linear both exit;
+}
+
+::view-transition-new(enter-exit) {
+  animation: 0.25s 0.25s linear both enter;
+} */
 
 .about-page {
   background: linear-gradient(rgb(191, 0, 255), rgb(255, 0, 149));
