@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+@font-face {
+  font-family: "Ginger Regular";
+  src: url("/fonts/F37 Ginger Regular.ttf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-regular: "Ginger Regular", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+}
+
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  position: relative;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 62.5%;
+  font-family: "Ginger Regular", sans-serif;
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+.page {
+  padding-top: 5rem;
+  position: relative;
+}
+
+.homePage {
+  background: linear-gradient(
+    rgb(0, 115, 255),
+    rgb(128, 0, 255),
+    rgb(128, 0, 255)
+  );
+}
+
+.about-page {
+  background: linear-gradient(rgb(191, 0, 255), rgb(255, 0, 149));
+}
+
+.portfolio-page {
+  background: linear-gradient(rgb(255, 0, 119), rgb(255, 0, 179));
+}
+
+.sites-section section:nth-child(even) {
+  background-color: #dce2e1;
+  z-index: 50000;
+}
+
+/* CHUBBS WONDER */
+#chubbs-wonder {
+  transform: translateX(-30%);
+}
+
+#chubbs-wonder .left-arm {
+  transform-origin: right;
+
+  animation-name: leftArm;
+  animation-delay: 2s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes leftArm {
+  70% {
+    transform: skew(3deg, 3deg);
+  }
+
+  100% {
+    transform: skew(0, 0);
+  }
+}
+
+/* CHUBBS COFFEE */
+#chubbs-coffee {
+  transform: translateX(-20%);
+}
+#chubbs-coffee .steam {
+  transform-origin: bottom;
+  animation-name: steam;
+  animation-delay: 1s;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+#chubbs-coffee .mug {
+  transform-origin: bottom;
+  animation-name: mug;
+  animation-delay: 1s;
+  animation-duration: 3.1s;
+  animation-fill-mode: backwards;
+}
+
+#chubbs-coffee .mouth {
+  transform-origin: bottom;
+  animation-name: mouth;
+  animation-delay: 1s;
+  animation-duration: 3s;
+  animation-fill-mode: backwards;
+}
+
+#chubbs-coffee .arm {
+  transform-origin: bottom;
+  animation-name: moveArm;
+  animation-delay: 1s;
+  animation-duration: 3s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes steam {
+  0% {
+    opacity: 0;
+    transform: translateY(0%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-5%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+}
+
+@keyframes moveArm {
+  50% {
+    transform: rotate(-8deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes mug {
+  50% {
+    transform: rotate(-6deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes mouth {
+  50% {
+    transform: rotate(3deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/*CHUBBS CONFETTI*/
+#chubbs-confetti .confeti {
+  opacity: 0;
+  transform: translateY(50%);
+  animation-name: popup;
+  animation-duration: 3s;
+  animation-delay: 1.9s;
+  animation-fill-mode: forwards;
+}
+
+#chubbs-confetti .lever {
+  transform: rotate(-13deg);
+  transform-origin: bottom right;
+  animation-name: lever;
+  animation-duration: 1.5s;
+  animation-delay: 1.3s;
+  animation-fill-mode: forwards;
+}
+
+#chubbs-confetti .arm {
+  transform: rotate(10deg);
+  transform-origin: top right;
+  animation-name: arm;
+  animation-duration: 1.5s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+#chubbs-confetti .arm.outline {
+  opacity: 0;
+  transform: rotate(10deg);
+  animation-name: armOutline;
+  animation-duration: 1.5s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+#chubbs-confetti .eyes,
+#chubbs-coffee .eyes,
+#chubbs-wonder .eyes {
+  animation-name: blinks;
+  animation-duration: 0.05s;
+  animation-delay: 2.3s;
+  animation-iteration-count: 1;
+}
+
+/* Arm */
+@keyframes arm {
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes armOutline {
+  70% {
+    opacity: 0;
+  }
+
+  to {
+    /* fill: none; */
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+/* Lever */
+@keyframes lever {
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* Confetti */
+@keyframes popup {
+  30% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+}
+
+/* Blinks */
+@keyframes blinks {
+  from {
+  }
+  to {
+    fill: black;
+  }
+}

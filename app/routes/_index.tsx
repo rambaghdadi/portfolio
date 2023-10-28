@@ -1,13 +1,21 @@
+import type {MetaFunction} from "@remix-run/node"
 import Footer from "../components/General/Footer/Footer"
 import MainHero from "../components/General/MainHero/MainHero"
 import Introduction from "../components/General/Introduction/Introduction"
 import RecentWork from "../components/HomeComponents/RecentWork/RecentWork"
 import ChubbsCoffee from "../components/HomeComponents/ChubbsCoffee"
 
+export const meta: MetaFunction = () => {
+  return [
+    {title: "New Remix App"},
+    {name: "description", content: "Welcome to Remix!"},
+  ]
+}
+
 export default function Home() {
   return (
     <>
-      <div className="homePage">
+      <div className="homePage page">
         <MainHero text={"Who."}>
           <ChubbsCoffee />
         </MainHero>
