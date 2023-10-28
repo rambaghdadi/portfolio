@@ -8,7 +8,7 @@ import ChubbsConfetti from "../components/PortfolioComponents/ChubbsConfetti"
 export default function Portfolio() {
   return (
     <>
-      <div className="portfolio-page">
+      <div className="portfolio-page page">
         <MainHero text={"Work."}>{<ChubbsConfetti />}</MainHero>
         <Introduction
           title={"Projects"}
