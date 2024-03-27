@@ -21,38 +21,6 @@ const examples = [
     src: "quickPolls.png",
   },
   {
-    title: "Mishwar Gallery",
-    subTitle:
-      "A digital platform dedicated to an art gallery based in Damascus, bringing both artists and art enthusiasts together.",
-
-    main: `Developed with the NextJS framework, striking a balance between aesthetic appeal and functionality. Integrated both Server-Side Rendering (SSR) and Incremental Static Regeneration (ISR) for speedy page loads and enhanced user experiences. Backed by PostgreSQL, ensuring reliable data storage and retrieval. Using Strapi as the CMS, the website empowers gallery administrators with intuitive CRUD operations, ensuring fresh and updated content. This website embodies a synergy of artistic presentation with technical proficiency, reflecting a passion for connecting communities through art in the digital age.`,
-
-    link: "https://mishwargallery.vercel.app/",
-    linkName: "Mishwar Gallery",
-    src: "mishwarGallery.png",
-  },
-  {
-    title: "To-Do App",
-    subTitle:
-      "Enhanced task management with this evolving SPA, designed to introduce new functionalities for a richer user journey.",
-
-    main: `Crafted on the NextJS framework for a seamless user experience. Integrates Firestore as the database, ensuring real-time updates and dependable task tracking. Also utilizes Firebase for authentication to guarantee a secure user experience and personalized task lists. This project not only showcases technical prowess with contemporary web technologies but also represents an ongoing commitment to iterative development and user-centric design. Periodic feature releases promise expanded capabilities, so revisit often to explore the latest enhancements.`,
-
-    link: "https://ram-to-do-app.vercel.app/",
-    linkName: "Todo App",
-    src: "todoApp.png",
-  },
-  {
-    title: "What's On?",
-    subTitle:
-      "Simplify your streaming choices; allowing you to discover movies and series available on your favorite platforms.",
-    main: `Effortlessly find content tailored to your preferred streaming services. The application is in active development, introducing new features periodically. Stay tuned for regular enhancements. It utilizes a comprehensive public API to ensure a vast and updated database of movies and series. It's being constructed using the responsive and efficient NextJS framework. It also leverages the power of Express JS, ensuring secure user sessions and streamlined server interactions. This project epitomizes the fusion of entertainment and technology, representing a commitment to offering users the most streamlined content discovery experience in the rapidly-growing streaming domain.`,
-
-    link: "https://whatsonuk.vercel.app/",
-    linkName: "What's On?",
-    src: "whatsonuk.png",
-  },
-  {
     title: "Adept Media",
     subTitle:
       "Elevating linguistic services with a dedicated digital showcase designed for a translation company.",
@@ -61,17 +29,6 @@ const examples = [
     link: "https://adeptmedia.vercel.app/",
     linkName: "Adept Media",
     src: "adeptMedia.png",
-  },
-  {
-    title: "Weather Web App",
-    subTitle:
-      "Offering precise meteorological insights based on your chosen location.",
-
-    main: `Enter any city to receive tailored weather updates, ensuring you're prepared, whether you're at home or traveling. Switch effortlessly between Celsius and Fahrenheit, catering to international preferences. While many apps provide extended forecasts, this app delivers a focused 3-day outlook, driven by API specifications, ensuring accurate and relevant data. This project blends a passion for user convenience with technical precision, offering a streamlined tool for daily planning in an ever-changing climate. Developed on the NextJS framework, promising an intuitive user experience. Weather data is fetched efficiently and securely from a trusted API source.`,
-
-    link: "https://ram-weather-app.vercel.app/",
-    linkName: "Weather App",
-    src: "weatherApp.png",
   },
 ]
 
