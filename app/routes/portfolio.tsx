@@ -13,7 +13,7 @@ export default function Portfolio() {
         <Introduction
           title={"Projects"}
           main={
-            "Below you will find a list of projects I created since I started web development."
+            "Below you will find a selection of projects I created since I started web development."
           }
           text={
             "Each list item will outline the technologies used to build it. Feel free to click-through to the actual websites for a more hands on experience."
