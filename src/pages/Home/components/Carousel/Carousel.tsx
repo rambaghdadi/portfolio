@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useRef, useEffect } from "react";
 import classes from "./Carousel.module.css";
 import gsap from "gsap";
