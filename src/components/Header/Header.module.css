@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  z-index: 1;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  font-size: 1.1rem;
+  background-color: inherit;
+  mix-blend-mode: difference;
+
+  &>p {
+    pointer-events: none;
+    color: white;
+  }
+}
+
+.iconContainer {
+  position: relative;
+  mix-blend-mode: difference;
+  background-color: inherit;
+  z-index: 101;
+
+  &>p {
+    mix-blend-mode: difference;
+    color: white;
+    z-index: 1;
+  }
+
+  &>div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 1.6rem;
+    width: 3rem;
+    z-index: 2;
+  }
+
+
+  &:hover {
+    &>div {
+      transform: scale(10);
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.section {
+  visibility: hidden;
+  pointer-events: none;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 100;
+
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+
+  &>main {
+    max-width: 36rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+  }
+}
+
+.exitIcon {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
+}
