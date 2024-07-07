@@ -68,7 +68,7 @@ export const Carousel = ({
                     ? "grayscale(100%) brightness(1.2) contrast(1.2)"
                     : undefined,
               }}
-              src="payments.png"
+              src="images/slides/payments.png"
             />
           </div>
         ))}
