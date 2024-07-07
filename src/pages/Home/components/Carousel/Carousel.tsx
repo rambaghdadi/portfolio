@@ -16,19 +16,20 @@ export const Carousel = ({
   currentSlide,
   onSlideChange,
 }: ICarouselProps) => {
-  const sectionRef = useRef(null);
-  const slidesRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const slidesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let loop = verticalLoop(".slide", {
+    const loop = verticalLoop(".slide", {
       repeat: -1,
       onChange: (_, index) => {
         onSlideChange(index);
       },
     });
+
     if (!loop) return;
 
-    let slow = gsap.to(loop, { timeScale: 0, duration: 0.2 });
+    const slow = gsap.to(loop, { timeScale: 0, duration: 0.2 });
     loop.timeScale(0);
 
     const handleScroll = ScrollTrigger.observe({
@@ -60,16 +61,15 @@ export const Carousel = ({
             data-id={slide.id}
             className={`slide ${classes.slide}`}
           >
-            <div
+            <img
               style={{
-                backgroundColor: slide.color,
                 filter:
                   currentSlide !== i
                     ? "grayscale(100%) brightness(1.2) contrast(1.2)"
                     : undefined,
               }}
-              className={classes.inner}
-            ></div>
+              src="payments.png"
+            />
           </div>
         ))}
       </div>
@@ -106,6 +106,8 @@ function verticalLoop(
   let timeline: gsap.core.Timeline | undefined;
   items = gsap.utils.toArray(items) as HTMLElement[];
   config = config || {};
+  const cleanupFns: (() => void)[] = [];
+
   gsap.context(() => {
     let onChange = config.onChange,
       lastIndex = 0,
@@ -280,6 +282,7 @@ function verticalLoop(
       },
       onResize = () => refresh(true),
       proxy: HTMLElement;
+
     gsap.set(items, { y: 0 });
     populateHeights();
     populateTimeline();
@@ -287,6 +290,10 @@ function verticalLoop(
     customAnimations();
     const debouncedResize = debounce(onResize, 200);
     window.addEventListener("resize", debouncedResize);
+    cleanupFns.push(() =>
+      window.removeEventListener("resize", debouncedResize),
+    );
+
     function toIndex(index: number, vars: gsap.TweenVars) {
       vars = clone(vars);
       Math.abs(index - curIndex) > length / 2 &&
@@ -308,6 +315,7 @@ function verticalLoop(
       gsap.killTweensOf(proxy);
       return tl.tweenTo(time, vars);
     }
+
     tl.elements = items;
     tl.next = (vars: gsap.TweenVars) => toIndex(curIndex + 1, vars);
     tl.previous = (vars: gsap.TweenVars) => toIndex(curIndex - 1, vars);
@@ -327,8 +335,10 @@ function verticalLoop(
     tl.closestIndex(true);
     onChange && onChange(items[curIndex], curIndex);
     timeline = tl;
-    return () => window.removeEventListener("resize", debouncedResize);
+
+    cleanupFns.push(() => timeline?.kill());
   });
+
   return timeline;
 }
 
