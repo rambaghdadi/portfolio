@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 interface ICarouselProps {
-  slides: { id: number; color: string }[];
+  slides: { id: number; src: string }[];
   currentSlide: number;
   onSlideChange: (index: number) => void;
 }
@@ -68,7 +68,7 @@ export const Carousel = ({
                     ? "grayscale(100%) brightness(1.2) contrast(1.2)"
                     : undefined,
               }}
-              src="images/slides/payments.png"
+              src={"images/slides/" + slide.src}
             />
           </div>
         ))}
