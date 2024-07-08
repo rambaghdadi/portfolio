@@ -12,7 +12,7 @@ import { useCursorLocation } from "../../hooks/useCursorLocation";
 import { Pointer } from "../../components/Pointer/Pointer";
 import { Footer } from "../../components/Footer/Footer";
 import { About } from "../About/About";
-gsap.registerPlugin(CustomEase);
+gsap.registerPlugin(CustomEase, useGSAP);
 
 const animationDelay = 2.6;
 

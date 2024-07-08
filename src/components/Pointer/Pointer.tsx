@@ -3,6 +3,7 @@ import classes from "./Pointer.module.css";
 import { transform } from "../../utils/utils";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+gsap.registerPlugin(useGSAP);
 
 interface IPointerProps {
   x: number;
@@ -16,7 +17,6 @@ export const Pointer = ({
   burgerRef,
   isBurgerHovered,
 }: IPointerProps) => {
-  gsap.registerPlugin(useGSAP);
   const pointerRef = useRef<HTMLDivElement>(null);
   const POINTER_SIZE = isBurgerHovered ? 70 : 14;
 

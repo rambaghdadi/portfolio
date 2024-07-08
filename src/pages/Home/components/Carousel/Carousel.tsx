@@ -3,7 +3,8 @@ import { useRef, useEffect } from "react";
 import classes from "./Carousel.module.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import { useGSAP } from "@gsap/react";
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 interface ICarouselProps {
   slides: { id: number; src: string }[];
@@ -19,38 +20,36 @@ export const Carousel = ({
   const sectionRef = useRef<HTMLElement>(null);
   const slidesRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const loop = verticalLoop(".slide", {
-      repeat: -1,
-      onChange: (_, index) => {
-        onSlideChange(index);
-      },
-    });
+  useGSAP(
+    () => {
+      const loop = verticalLoop(".slide", {
+        repeat: -1,
+        onChange: (_, index) => {
+          onSlideChange(index);
+        },
+      });
 
-    if (!loop) return;
+      if (!loop) return;
 
-    const slow = gsap.to(loop, { timeScale: 0, duration: 0.2 });
-    loop.timeScale(0);
+      const slow = gsap.to(loop, { timeScale: 0, duration: 0.2 });
+      loop.timeScale(0);
 
-    const handleScroll = ScrollTrigger.observe({
-      target: document.documentElement,
-      type: "touch,wheel",
-      wheelSpeed: -0.1,
-      onChange: (self) => {
-        loop.timeScale(
-          Math.abs(self.deltaX) > Math.abs(self.deltaY)
-            ? -self.deltaX
-            : -self.deltaY,
-        );
-        slow.invalidate().restart();
-      },
-    });
-
-    return () => {
-      handleScroll.kill();
-      loop.kill();
-    };
-  }, []);
+      ScrollTrigger.observe({
+        target: document.documentElement,
+        type: "touch,wheel",
+        wheelSpeed: -0.2,
+        onChange: (self) => {
+          loop.timeScale(
+            Math.abs(self.deltaX) > Math.abs(self.deltaY)
+              ? -self.deltaX
+              : -self.deltaY,
+          );
+          slow.invalidate().restart();
+        },
+      });
+    },
+    { scope: sectionRef },
+  );
 
   return (
     <section ref={sectionRef} className={classes.section}>

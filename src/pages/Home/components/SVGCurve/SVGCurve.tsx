@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { useRef } from "react";
 import { interpolatePath } from "../../../../utils/utils";
 import { CustomEase } from "gsap/CustomEase";
+gsap.registerPlugin(CustomEase, useGSAP);
 
 export const HomeSVGCurve = ({
   animationDelay,
@@ -17,7 +18,6 @@ export const HomeSVGCurve = ({
 
   useGSAP(
     () => {
-      gsap.registerPlugin(CustomEase);
       gsap.to(
         { progress: 0 },
         {
