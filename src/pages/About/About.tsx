@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { Contact } from "./components/Contact";
 import { AboutMe } from "./components/AboutMe";
+import { Tech } from "./components/Tech";
 gsap.registerPlugin(CustomEase);
 
 interface IAboutProps {
@@ -55,6 +56,7 @@ export const About = ({ isAboutOpen, setIsAboutOpen }: IAboutProps) => {
       <main>
         <Contact />
         <AboutMe />
+        <Tech />
       </main>
     </section>
   );
