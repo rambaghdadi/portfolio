@@ -3,11 +3,14 @@ import classes from "./ProjectInfo.module.css";
 interface IProjectInfoProps {
   name: string;
   description: string;
+  link: string;
 }
-export const ProjectInfo = ({ name, description }: IProjectInfoProps) => {
+export const ProjectInfo = ({ name, description, link }: IProjectInfoProps) => {
   return (
     <div className={classes.container}>
-      <p>{name}</p>
+      <a href={link} target="_blank">
+        <p>{name}</p>
+      </a>
       <p>{description}</p>
     </div>
   );

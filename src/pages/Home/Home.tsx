@@ -71,6 +71,7 @@ export const Home = () => {
             <ProjectInfo
               name={currentSlideInfo.title}
               description={currentSlideInfo.main}
+              link={currentSlideInfo.link}
             />
           </div>
           <Footer />

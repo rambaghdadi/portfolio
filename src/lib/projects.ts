@@ -3,7 +3,7 @@ export const slides = [
     id: 1,
     title: "UNDO Carbon",
     main: `Actively developing B2B and internal tools to facilitate efficient carbon capture from the environment. Focused on creating solutions that empower users to enhance their carbon sequestration efforts.`,
-    link: "https://ram-ui.vercel.app/",
+    link: "https://un-do.com",
     src: "undo.png",
   },
   {
@@ -30,7 +30,7 @@ export const slides = [
   {
     id: 5,
     title: "Adept Media",
-    main: `A static website built with NextJS, ensuring a responsive and modern user interface. This platform merges the nuances of language services with digital engagement, representing an understanding of business needs in the contemporary digital landscape.`,
+    main: `A landing page built with NextJS, ensuring a responsive and modern user interface. This platform merges the nuances of language services with digital engagement, representing an understanding of business needs in the contemporary digital landscape.`,
     link: "https://adeptmedia.vercel.app/",
     src: "translation.png",
   },

@@ -11,6 +11,25 @@
     width: 100%;
     height: 700px;
     padding: 0.2rem 0rem;
+    position: relative;
+
+    .imgCover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: black;
+      transition: opacity 0.3s;
+    }
+
+    .active {
+      opacity: 0;
+    }
+
+    .inactive {
+      opacity: 0.6;
+    }
 
     img {
       max-width: 100%;

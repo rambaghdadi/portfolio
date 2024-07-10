@@ -37,7 +37,7 @@ export const Carousel = ({
       ScrollTrigger.observe({
         target: document.documentElement,
         type: "touch,wheel",
-        wheelSpeed: -0.2,
+        wheelSpeed: -0.1,
         onChange: (self) => {
           loop.timeScale(
             Math.abs(self.deltaX) > Math.abs(self.deltaY)
@@ -48,7 +48,7 @@ export const Carousel = ({
         },
       });
     },
-    { scope: sectionRef, dependencies: [slides] },
+    { scope: sectionRef },
   );
 
   return (
@@ -60,14 +60,9 @@ export const Carousel = ({
             data-id={slide.id}
             className={`slide ${classes.slide}`}
           >
-            <img
-              style={{
-                filter:
-                  currentSlide !== i
-                    ? "grayscale(100%) brightness(1.2) contrast(1.2)"
-                    : undefined,
-              }}
-              src={"images/slides/" + slide.src}
+            <img src={"images/slides/" + slide.src} />
+            <div
+              className={`${classes.imgCover} ${currentSlide === i ? classes.active : classes.inactive}`}
             />
           </div>
         ))}

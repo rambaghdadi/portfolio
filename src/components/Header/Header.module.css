@@ -19,6 +19,7 @@
   mix-blend-mode: difference;
   background-color: inherit;
   z-index: 101;
+  cursor: pointer;
 
   &>p {
     mix-blend-mode: difference;

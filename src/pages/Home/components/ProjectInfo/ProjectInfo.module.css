@@ -4,14 +4,20 @@
   text-align: center;
   gap: 0.6rem;
 
-  &>p:first-child {
+  a {
+    all: unset;
     font-weight: 500;
     font-size: 1.8rem;
+
+    p {
+      cursor: pointer;
+    }
   }
 
   &>p:nth-child(2) {
     color: var(--font-color-gray);
     font-size: 1.2rem;
   }
+
 
 }
