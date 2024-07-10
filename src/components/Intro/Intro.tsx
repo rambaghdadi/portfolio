@@ -11,6 +11,7 @@ export const Intro = () => {
 
   useGSAP(
     () => {
+      if (!nameContainerRef || !nameContainerRef.current) return;
       wordsRef.current.forEach((ref) => {
         gsap.to(ref, {
           opacity: 1,

@@ -20,6 +20,11 @@
   background-color: inherit;
   z-index: 101;
   cursor: pointer;
+  display: none;
+
+  @media (min-width: 850px) {
+    display: block;
+  }
 
   &>p {
     mix-blend-mode: difference;

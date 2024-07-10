@@ -11,6 +11,9 @@ import { ProjectInfo } from "./components/ProjectInfo/ProjectInfo";
 import { Pointer } from "../../components/Pointer/Pointer";
 import { Footer } from "../../components/Footer/Footer";
 import { About } from "../About/About";
+import { Contact } from "../About/components/Contact";
+import { AboutMe } from "../About/components/AboutMe";
+import { Tech } from "../About/components/Tech";
 gsap.registerPlugin(CustomEase, useGSAP);
 
 const animationDelay = 2.6;
@@ -47,6 +50,11 @@ export const Home = () => {
             <p>{`(  ${currentSlide + 1}  -  ${slides.length}  )`}</p>
           </div>
           <div className={classes.slideInfo}>
+            <div className={classes.mobileAbout}>
+              <Contact />
+              <AboutMe />
+              <Tech />
+            </div>
             <ProjectInfo
               name={currentSlideInfo.title}
               description={currentSlideInfo.main}
