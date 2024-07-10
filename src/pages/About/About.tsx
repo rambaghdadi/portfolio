@@ -33,25 +33,6 @@ export const About = ({ isAboutOpen, setIsAboutOpen }: IAboutProps) => {
             pointerEvents: "all",
           },
         );
-      } else {
-        gsap.to(mainRef.current, {
-          yPercent: -100,
-          delay: 0.4,
-          ease: CustomEase.create("custom", "0.76,0,0.24,1"),
-          duration: 1,
-          pointerEvents: "none",
-          onComplete: () => {
-            setIsAboutOpen(false);
-          },
-        });
-      }
-    },
-    { scope: mainRef, dependencies: [isAboutOpen] },
-  );
-
-  useGSAP(
-    () => {
-      if (isAboutOpen) {
         gsap.fromTo(
           ".anim-main",
           {
@@ -67,6 +48,16 @@ export const About = ({ isAboutOpen, setIsAboutOpen }: IAboutProps) => {
           },
         );
       } else {
+        gsap.to(mainRef.current, {
+          yPercent: -100,
+          delay: 0.4,
+          ease: CustomEase.create("custom", "0.76,0,0.24,1"),
+          duration: 1,
+          pointerEvents: "none",
+          onComplete: () => {
+            setIsAboutOpen(false);
+          },
+        });
         gsap.to(".anim-main", {
           opacity: 0,
           yPercent: 50,

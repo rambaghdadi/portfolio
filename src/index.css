@@ -13,12 +13,14 @@
 
   --font-color: #000;
   --bg-color: #fff;
+  --font-color-gray: #444;
   --accent-color: #004eac;
 
   @media (prefers-color-scheme: dark) {
     & {
       --font-color: #fff !important;
       --bg-color: #000 !important;
+      --font-color-gray: #bfbfbf;
     }
   }
 }
