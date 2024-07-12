@@ -30,12 +30,15 @@ export const Home = () => {
 
   useGSAP(
     () => {
-      gsap.to(mainRef.current, {
-        x: 0,
-        ease: CustomEase.create("custom", "0.76,0,0.24,1"),
-        duration: 2,
-        delay: animationDelay,
-      });
+      if (window.innerWidth > 850) {
+        gsap.set(mainRef.current, { xPercent: 120 });
+        gsap.to(mainRef.current, {
+          xPercent: 0,
+          ease: CustomEase.create("custom", "0.76,0,0.24,1"),
+          duration: 2,
+          delay: animationDelay,
+        });
+      }
     },
     { scope: mainRef },
   );

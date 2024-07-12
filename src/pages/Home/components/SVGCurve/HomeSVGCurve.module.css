@@ -6,4 +6,9 @@
   height: 100%;
   fill: var(--bg-color);
   stroke: none;
+  display: none;
+
+  @media (min-width: 850px) {
+    display: block;
+  }
 }

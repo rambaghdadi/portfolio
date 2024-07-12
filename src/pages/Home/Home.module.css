@@ -1,7 +1,6 @@
 .main {
   background-color: var(--bg-color);
   height: 100vh;
-  transform: translate(120%, 0);
   display: flex;
   flex-direction: row;
 

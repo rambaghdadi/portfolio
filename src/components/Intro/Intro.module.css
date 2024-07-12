@@ -9,7 +9,7 @@
   z-index: 0;
   display: none;
 
-  @media (min-width: 700px) {
+  @media (min-width: 850px) {
     display: block;
   }
 
