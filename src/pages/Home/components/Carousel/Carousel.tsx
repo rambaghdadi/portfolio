@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useCallback } from "react";
 import classes from "./Carousel.module.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,6 +12,19 @@ interface ICarouselProps {
   onSlideChange: (index: number) => void;
 }
 
+// Debounce function
+function debounce(func: Function, wait: number) {
+  let timeout: NodeJS.Timeout;
+  return function executedFunction(...args: any[]) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
 export const Carousel = ({
   slides,
   currentSlide,
@@ -19,6 +32,20 @@ export const Carousel = ({
 }: ICarouselProps) => {
   const sectionRef = useRef<HTMLElement>(null);
   const slidesRef = useRef<HTMLDivElement>(null);
+  const loopRef = useRef<any>(null);
+
+  const handleScroll = useCallback(
+    debounce((self: any) => {
+      if (loopRef.current) {
+        loopRef.current.timeScale(
+          Math.abs(self.deltaX) > Math.abs(self.deltaY)
+            ? -self.deltaX
+            : -self.deltaY,
+        );
+      }
+    }, 10),
+    [],
+  );
 
   useGSAP(
     () => {
@@ -32,21 +59,14 @@ export const Carousel = ({
 
       if (!loop) return;
 
-      const slow = gsap.to(loop, { timeScale: 0 });
+      loopRef.current = loop;
       loop.timeScale(0);
 
       ScrollTrigger.observe({
         target: document.documentElement,
         type: "touch,wheel",
         wheelSpeed: -0.1,
-        onChange: (self) => {
-          loop.timeScale(
-            Math.abs(self.deltaX) > Math.abs(self.deltaY)
-              ? -self.deltaX
-              : -self.deltaY,
-          );
-          slow.invalidate().restart();
-        },
+        onChange: handleScroll,
       });
     },
     { scope: sectionRef },
@@ -61,9 +81,11 @@ export const Carousel = ({
             data-id={slide.id}
             className={`slide ${classes.slide}`}
           >
-            <img src={"images/slides/" + slide.src} />
+            <img src={`images/slides/${slide.src}`} alt={`Slide ${slide.id}`} />
             <div
-              className={`${classes.imgCover} ${currentSlide === i ? classes.active : classes.inactive}`}
+              className={`${classes.imgCover} ${
+                currentSlide === i ? classes.active : classes.inactive
+              }`}
             />
           </div>
         ))}
