@@ -24,10 +24,10 @@
 
     .imgCover {
       position: absolute;
-      top: 0;
+      top: calc(0px + 0.2rem);
+      bottom: calc(0px + 0.2rem);
       left: 0;
       right: 0;
-      bottom: 0;
       background-color: black;
       transition: opacity 0.3s;
     }
