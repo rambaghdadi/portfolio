@@ -1,0 +1,69 @@
+.section {
+  visibility: hidden;
+  pointer-events: none;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  top: 0;
+  left: 0;
+  background-color: var(--bg-color);
+  z-index: 100;
+
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+
+  &>main {
+    max-width: 36rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+  }
+}
+
+.exitIcon {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
+}
+
+.aboutMe {
+  p {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.7;
+
+    @media (min-width: 850px) {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  align-items: center;
+
+  &>p:first-child {
+    font-size: 1.4rem;
+
+    @media (min-width: 850px) {
+      font-size: 2rem;
+    }
+  }
+
+  &>p:last-child {
+    color: #004eac;
+    line-height: 1;
+    font-weight: 500;
+    font-size: 2.3rem;
+
+    @media (min-width: 850px) {
+      font-size: 3.6rem;
+    }
+  }
+}

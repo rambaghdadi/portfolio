@@ -1,0 +1,64 @@
+.main {
+  background-color: var(--bg-color);
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+
+  &>div:nth-child(2) {
+    width: 100%;
+
+    @media (min-width: 850px) {
+      width: 60%;
+    }
+  }
+
+  &>section {
+    display: none;
+
+    @media (min-width: 850px) {
+      width: 40%;
+      display: block;
+    }
+  }
+}
+
+.container {
+  height: 100vh;
+  height: 100svh;
+  position: relative;
+
+  .slideNumber {
+    position: absolute;
+    padding: 0.5rem;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%) rotate(-90deg);
+    display: none;
+
+    @media (min-width: 850px) {
+      display: block;
+    }
+
+  }
+
+  .slideInfo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 500px;
+
+    .mobileAbout {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+
+      @media (min-width: 850px) {
+        display: none;
+      }
+    }
+  }
+
+}

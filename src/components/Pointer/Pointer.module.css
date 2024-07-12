@@ -1,0 +1,16 @@
+.pointer {
+  pointer-events: none;
+  z-index: 1000;
+  position: fixed;
+  width: 14px;
+  height: 14px;
+  mix-blend-mode: difference;
+  background-color: white;
+  border-radius: 50%;
+  will-change: transform;
+  display: none;
+
+  @media (min-width: 850px) and (hover: hover) {
+    display: block;
+  }
+}

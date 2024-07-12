@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+  font-family: "Outfit", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --font-color: #000;
+  --bg-color: #fff;
+  --font-color-gray: #444;
+  --accent-color: #004eac;
+
+  @media (prefers-color-scheme: dark) {
+    & {
+      --font-color: #fff !important;
+      --bg-color: #000 !important;
+      --font-color-gray: #bfbfbf;
+      --accent-color: #0074ff;
+    }
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  color: var(--font-color);
+  background-color: var(--bg-color);
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+a {
+  font-weight: 500;
+  color: var(--font-color);
+  border-bottom: 2px solid var(--font-color);
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+p {
+  cursor: default;
+  user-select: none;
+}

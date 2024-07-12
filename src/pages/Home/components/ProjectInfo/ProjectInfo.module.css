@@ -1,0 +1,30 @@
+.container {
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.6rem;
+  align-items: center;
+
+  @media (min-width: 850px) {
+    display: flex;
+
+  }
+
+  a {
+    all: unset;
+    font-weight: 500;
+    font-size: 1.8rem;
+    width: max-content;
+
+    p {
+      cursor: pointer;
+    }
+  }
+
+  &>p:nth-child(2) {
+    color: var(--font-color-gray);
+    font-size: 1.2rem;
+  }
+
+
+}
