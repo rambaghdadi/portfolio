@@ -32,20 +32,6 @@ export const Carousel = ({
 }: ICarouselProps) => {
   const sectionRef = useRef<HTMLElement>(null);
   const slidesRef = useRef<HTMLDivElement>(null);
-  const loopRef = useRef<any>(null);
-
-  const handleScroll = useCallback(
-    debounce((self: any) => {
-      if (loopRef.current) {
-        loopRef.current.timeScale(
-          Math.abs(self.deltaX) > Math.abs(self.deltaY)
-            ? -self.deltaX
-            : -self.deltaY,
-        );
-      }
-    }, 10),
-    [],
-  );
 
   useGSAP(
     () => {
@@ -59,14 +45,23 @@ export const Carousel = ({
 
       if (!loop) return;
 
-      loopRef.current = loop;
+      const slow = gsap.to(loop, { timeScale: 0 });
       loop.timeScale(0);
+
+      const debouncedOnChange = debounce((e) => {
+        loop.timeScale(
+          Math.abs(e.deltaX) > Math.abs(e.deltaY) ? -e.deltaX : -e.deltaY,
+        );
+        slow.invalidate().restart();
+      }, 10);
 
       ScrollTrigger.observe({
         target: document.documentElement,
         type: "touch,wheel",
         wheelSpeed: -0.1,
-        onChange: handleScroll,
+        onChange: (e) => {
+          debouncedOnChange(e);
+        },
       });
     },
     { scope: sectionRef },
