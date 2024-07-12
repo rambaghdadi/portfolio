@@ -33,11 +33,12 @@
 }
 
 body {
-  min-height: 100vh;
-  min-height: 100svh;
   color: var(--font-color);
   background-color: var(--bg-color);
   overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
 }
 
 a {

@@ -6,19 +6,19 @@ import gsap from "gsap";
 gsap.registerPlugin(useGSAP);
 
 interface IPointerProps {
-  isBurgerHovered: boolean;
-  burgerRef: RefObject<HTMLDivElement>;
+  isTargetHovered: boolean;
+  targetRef: RefObject<HTMLDivElement>;
 }
-export const Pointer = ({ burgerRef, isBurgerHovered }: IPointerProps) => {
+export const Pointer = ({ targetRef, isTargetHovered }: IPointerProps) => {
   const x = useRef<((value: number) => void) | null>(null);
   const y = useRef<((value: number) => void) | null>(null);
 
   const pointerRef = useRef<HTMLDivElement>(null);
-  const POINTER_SIZE = isBurgerHovered ? 70 : 14;
+  const POINTER_SIZE = isTargetHovered ? 60 : 14;
 
-  function getBurgerCoords() {
-    const burgerElement = burgerRef.current as HTMLDivElement;
-    const { left, top, height, width } = burgerElement.getBoundingClientRect();
+  function getTargetRef() {
+    const targetElement = targetRef.current as HTMLDivElement;
+    const { left, top, height, width } = targetElement.getBoundingClientRect();
     return {
       x: left + width / 2,
       y: top + height / 2,
@@ -48,8 +48,8 @@ export const Pointer = ({ burgerRef, isBurgerHovered }: IPointerProps) => {
     let scaleY = 1;
     let angle = 0;
 
-    if (isBurgerHovered) {
-      const { x: burgerX, y: burgerY, width, height } = getBurgerCoords();
+    if (isTargetHovered) {
+      const { x: burgerX, y: burgerY, width, height } = getTargetRef();
       const distanceDiff = { x: e.clientX - burgerX, y: e.clientY - burgerY };
       angle = Math.atan2(distanceDiff.y, distanceDiff.x);
       const absDistance = Math.max(
@@ -81,7 +81,7 @@ export const Pointer = ({ burgerRef, isBurgerHovered }: IPointerProps) => {
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
     };
-  }, [isBurgerHovered]);
+  }, [isTargetHovered]);
 
   return <div ref={pointerRef} className={classes.pointer} />;
 };

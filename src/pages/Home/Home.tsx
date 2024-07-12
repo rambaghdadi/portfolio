@@ -21,10 +21,12 @@ const animationDelay = 2.6;
 export const Home = () => {
   const homeRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLDivElement>(null);
-  const burgerRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const xRef = useRef<HTMLDivElement>(null);
+
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isBurgerHovered, setIsBurgerHovered] = useState(false);
+  const [isTargetHovered, setIsTargetHovered] = useState(false);
 
   useGSAP(
     () => {
@@ -41,11 +43,19 @@ export const Home = () => {
   const currentSlideInfo = slides[currentSlide];
   return (
     <>
-      <Pointer {...{ isBurgerHovered, burgerRef }} />
+      <Pointer
+        {...{ isTargetHovered, targetRef: isAboutOpen ? xRef : aboutRef }}
+      />
       <main ref={mainRef} className={classes.main}>
         <HomeSVGCurve animationDelay={animationDelay} />
         <div ref={homeRef} className={classes.container}>
-          <Header ref={burgerRef} {...{ setIsAboutOpen, setIsBurgerHovered }} />
+          <Header
+            {...{
+              onTargetClick: setIsAboutOpen,
+              setIsTargetHovered,
+              ref: aboutRef,
+            }}
+          />
           <div className={classes.slideNumber}>
             <p>{`(  ${currentSlide + 1}  -  ${slides.length}  )`}</p>
           </div>
@@ -68,7 +78,9 @@ export const Home = () => {
           onSlideChange={(index) => setCurrentSlide(index)}
         />
       </main>
-      <About {...{ setIsAboutOpen, isAboutOpen }} />
+      <About
+        {...{ setIsAboutOpen, isAboutOpen, setIsTargetHovered, ref: xRef }}
+      />
     </>
   );
 };

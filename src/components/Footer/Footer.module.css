@@ -3,7 +3,11 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 2rem;
+  padding: 1rem;
+
+  @media (min-width: 850px) {
+    padding: 2rem;
+  }
 
   & div {
     display: flex;

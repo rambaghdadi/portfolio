@@ -3,21 +3,25 @@
   z-index: 1;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem;
+  padding: 1rem;
   font-size: 1.1rem;
   background-color: inherit;
   mix-blend-mode: difference;
 
-  &>p {
+  @media (min-width: 850px) {
+    padding: 2rem;
+  }
+
+  p {
     pointer-events: none;
+    mix-blend-mode: difference;
+    background-color: inherit;
     color: white;
   }
 }
 
-.iconContainer {
+.targetContainer {
   position: relative;
-  mix-blend-mode: difference;
-  background-color: inherit;
   z-index: 101;
   cursor: pointer;
   display: none;
@@ -26,24 +30,18 @@
     display: block;
   }
 
-  &>p {
-    mix-blend-mode: difference;
-    color: white;
-    z-index: 1;
-  }
-
-  &>div {
+  .target {
     position: absolute;
     left: 0;
     top: 0;
     height: 1.6rem;
-    width: 3rem;
+    width: 100%;
     z-index: 2;
   }
 
 
   &:hover {
-    &>div {
+    .target {
       transform: scale(10);
     }
   }
