@@ -247,14 +247,14 @@ function verticalLoop(items, config) {
         customAnimations();
         tl.progress(progress, true);
       },
-      onResize = () => refresh(false),
+      onResize = () => refresh(true),
       proxy;
     gsap.set(items, { y: 0 });
     populateHeights();
     populateTimeline();
     populateOffsets();
     customAnimations();
-    // window.addEventListener("resize", onResize);
+    window.addEventListener("resize", onResize);
 
     function toIndex(index, vars) {
       vars = clone(vars);
@@ -293,7 +293,7 @@ function verticalLoop(items, config) {
     tl.closestIndex(true);
     onChange && onChange(items[curIndex], curIndex);
     timeline = tl;
-    // return () => window.removeEventListener("resize", onResize); // cleanup
+    return () => window.removeEventListener("resize", onResize); // cleanup
   });
   return timeline;
 }
