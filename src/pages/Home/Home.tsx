@@ -60,7 +60,7 @@ export const Home = () => {
             }}
           />
           <div className={classes.slideNumber}>
-            <p>{`${currentSlide + 1} - ${slides.length}`}</p>
+            <p>{`${currentSlide + 1} / ${slides.length}`}</p>
           </div>
           <div className={classes.slideInfo}>
             <div className={classes.mobileAbout}>
