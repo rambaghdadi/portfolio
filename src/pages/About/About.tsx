@@ -8,6 +8,7 @@ import { Contact } from "./components/Contact";
 import { AboutMe } from "./components/AboutMe";
 import { Tech } from "./components/Tech";
 import { PointerTarget } from "../../components/Header/Header";
+import { AboutSVGCurve } from "./components/SVGCurve/SVGCurve";
 gsap.registerPlugin(CustomEase, useGSAP);
 
 interface IAboutProps {
@@ -86,6 +87,7 @@ export const About = forwardRef<HTMLDivElement, IAboutProps>((props, ref) => {
         <AboutMe />
         <Tech />
       </main>
+      <AboutSVGCurve {...{ isAboutOpen: props.isAboutOpen }} />
     </section>
   );
 });
