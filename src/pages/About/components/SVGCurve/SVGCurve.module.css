@@ -2,11 +2,15 @@
   position: absolute;
   bottom: -150px;
   left: 0;
-  height: 150;
+  height: 150px;
   width: 100%;
   fill: var(--bg-color);
   stroke: none;
   display: none;
+
+  path {
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.1));
+  }
 
   @media (min-width: 850px) {
     display: block;
