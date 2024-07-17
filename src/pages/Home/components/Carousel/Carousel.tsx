@@ -53,7 +53,7 @@ export const Carousel = ({
           Math.abs(e.deltaX) > Math.abs(e.deltaY) ? -e.deltaX : -e.deltaY,
         );
         slow.invalidate().restart();
-      }, 10);
+      }, 15);
 
       ScrollTrigger.observe({
         target: document.documentElement,

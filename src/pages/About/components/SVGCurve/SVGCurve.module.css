@@ -9,7 +9,7 @@
   display: none;
 
   path {
-    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(5px 5px 5px rgba(125, 125, 125, 0.1));
   }
 
   @media (min-width: 850px) {
