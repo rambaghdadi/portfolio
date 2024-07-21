@@ -15,6 +15,8 @@ interface IAboutProps {
   isAboutOpen: boolean;
   setIsAboutOpen: (arg: boolean) => void;
   setIsTargetHovered: (arg: boolean) => void;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 
 export const About = forwardRef<HTMLDivElement, IAboutProps>((props, ref) => {
@@ -83,7 +85,12 @@ export const About = forwardRef<HTMLDivElement, IAboutProps>((props, ref) => {
         </PointerTarget>
       </div>
       <main className="anim-main">
-        <Contact />
+        <Contact
+          {...{
+            onMouseEnter: props.onMouseEnter,
+            onMouseLeave: props.onMouseLeave,
+          }}
+        />
         <AboutMe />
         <Tech />
       </main>

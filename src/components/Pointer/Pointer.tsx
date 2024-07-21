@@ -7,14 +7,19 @@ gsap.registerPlugin(useGSAP);
 
 interface IPointerProps {
   isTargetHovered: boolean;
+  isHighlightHovered: boolean;
   targetRef: RefObject<HTMLDivElement>;
 }
-export const Pointer = ({ targetRef, isTargetHovered }: IPointerProps) => {
+export const Pointer = ({
+  targetRef,
+  isTargetHovered,
+  isHighlightHovered,
+}: IPointerProps) => {
   const x = useRef<((value: number) => void) | null>(null);
   const y = useRef<((value: number) => void) | null>(null);
 
   const pointerRef = useRef<HTMLDivElement>(null);
-  const POINTER_SIZE = isTargetHovered ? 60 : 14;
+  const POINTER_SIZE = isTargetHovered ? 60 : isHighlightHovered ? 150 : 14;
 
   function getTargetRef() {
     const targetElement = targetRef.current as HTMLDivElement;
@@ -47,6 +52,15 @@ export const Pointer = ({ targetRef, isTargetHovered }: IPointerProps) => {
     let scaleX = 1;
     let scaleY = 1;
     let angle = 0;
+
+    if (isHighlightHovered) {
+      gsap.to(pointerRef.current, {
+        width: POINTER_SIZE,
+        height: POINTER_SIZE,
+        duration: 0.6,
+        ease: "sine",
+      });
+    }
 
     if (isTargetHovered) {
       const { x: burgerX, y: burgerY, width, height } = getTargetRef();
@@ -81,7 +95,7 @@ export const Pointer = ({ targetRef, isTargetHovered }: IPointerProps) => {
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
     };
-  }, [isTargetHovered]);
+  }, [isTargetHovered, isHighlightHovered]);
 
   return <div ref={pointerRef} className={classes.pointer} />;
 };

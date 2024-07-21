@@ -27,6 +27,7 @@ export const Home = () => {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTargetHovered, setIsTargetHovered] = useState(false);
+  const [isHighlightHovered, setIsHighlightHovered] = useState(false);
 
   useGSAP(
     () => {
@@ -47,7 +48,11 @@ export const Home = () => {
   return (
     <>
       <Pointer
-        {...{ isTargetHovered, targetRef: isAboutOpen ? xRef : aboutRef }}
+        {...{
+          isTargetHovered,
+          isHighlightHovered,
+          targetRef: isAboutOpen ? xRef : aboutRef,
+        }}
       />
       <main ref={mainRef} className={classes.main}>
         <HomeSVGCurve animationDelay={animationDelay} />
@@ -69,6 +74,8 @@ export const Home = () => {
               <Tech />
             </div>
             <ProjectInfo
+              onMouseEnter={() => setIsHighlightHovered(true)}
+              onMouseLeave={() => setIsHighlightHovered(false)}
               name={currentSlideInfo.title}
               description={currentSlideInfo.main}
               link={currentSlideInfo.link}
@@ -82,6 +89,8 @@ export const Home = () => {
         />
       </main>
       <About
+        onMouseEnter={() => setIsHighlightHovered(true)}
+        onMouseLeave={() => setIsHighlightHovered(false)}
         {...{ setIsAboutOpen, isAboutOpen, setIsTargetHovered, ref: xRef }}
       />
     </>
